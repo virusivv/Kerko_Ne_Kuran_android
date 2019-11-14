@@ -2,4 +2,8 @@
     <string name="app_name">Kërko në Kur\'an</string>
     <string name="kategorite_butoni">Kategoritë</string>
     <string name="lexo_kuran_arabisht_butoni">Lexo Kur\'anin</string>
+    <string name="kthehu_butoni">Kthehu</string>
+    <string name="vazhdo_butoni">Vazhdo</string>
+    <string name="app_name_translated">Kërko në Kur\'an</string>
+    <string name="settings_butoni">Preferencat</string>
 </resources>

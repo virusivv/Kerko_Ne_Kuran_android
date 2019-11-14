@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Search in Qur\'an</string>
+    <string name="app_name">Kërko në Kur\'an</string>
     <string name="kategorite_butoni">Categories</string>
     <string name="lexo_kuran_arabisht_butoni">Read Qur\'an</string>
+    <string name="kthehu_butoni">Back</string>
+    <string name="vazhdo_butoni">Continue</string>
+    <string name="app_name_translated">Searhc in Qur\'an</string>
+    <string name="settings_butoni">Preferences</string>
 </resources>

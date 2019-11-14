@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kur\'anda ara</string>
-    <string name="kategorite_butoni">Kategoriler</string>
-    <string name="lexo_kuran_arabisht_butoni">Kur\'an oku</string>
+    <string name="app_name">Kërko në Kur\'an</string>
+    <string name="kategorite_butoni">Kategorien</string>
+    <string name="lexo_kuran_arabisht_butoni">Kur\'an lese</string>
+    <string name="kthehu_butoni">Zurück</string>
+    <string name="vazhdo_butoni">Weiter</string>
+    <string name="app_name_translated">Suche im Kur\'an</string>
+    <string name="settings_butoni">Einstellungen</string>
 </resources>

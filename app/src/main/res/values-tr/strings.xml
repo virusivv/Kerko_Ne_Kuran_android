@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kërko në Kur\'an</string>
+    <string name="kategorite_butoni">Kategoriler</string>
+    <string name="lexo_kuran_arabisht_butoni">Kur\'an oku</string>
+    <string name="kthehu_butoni">Geri</string>
+    <string name="vazhdo_butoni">Devam</string>
+    <string name="app_name_translated">Kuran\'da ara</string>
+    <string name="settings_butoni">Tercihler</string>
+</resources>

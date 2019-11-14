@@ -9,7 +9,7 @@
 
 
     <Button
-            android:text="Button"
+            android:text="@string/kthehu_butoni"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnSaveLanguageSelector"
@@ -17,7 +17,8 @@
             android:layout_marginEnd="16dp" android:layout_marginRight="16dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/rdbGroup"/>
+            app:layout_constraintTop_toBottomOf="@+id/rdbGroup"
+            android:visibility="invisible"/>
     <RadioGroup
             android:id="@+id/rdbGroup"
             android:layout_width="130dp"
