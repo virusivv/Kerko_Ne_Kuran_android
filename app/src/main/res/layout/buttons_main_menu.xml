@@ -9,15 +9,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/button"/>
     <Button
-            android:text="@string/lexo_kuran_arabisht_butoni"
+            android:text="@string/lexo_kuranin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/button2"/>
     <Button
-            android:text="Button"
+            android:text="@string/lexokuranin_latin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/button3"/>
     <Button
-            android:text="Button"
+            android:text="@string/lexokuranin_arabisht"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/button4"/>
 </LinearLayout>

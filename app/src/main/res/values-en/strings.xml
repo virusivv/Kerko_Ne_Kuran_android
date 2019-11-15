@@ -2,9 +2,44 @@
 <resources>
     <string name="app_name">Kërko në Kur\'an</string>
     <string name="kategorite_butoni">Categories</string>
-    <string name="lexo_kuran_arabisht_butoni">Read Qur\'an</string>
+    <string name="lexo_kuranin">Read Qur\'an</string>
     <string name="kthehu_butoni">Back</string>
     <string name="vazhdo_butoni">Continue</string>
     <string name="app_name_translated">Searhc in Qur\'an</string>
     <string name="settings_butoni">Preferences</string>
+    <string name="about">About</string>
+    <string name="app_credit">Application developer:\nIbrahim Vasija\n\nApplication distributor:</string>
+    <string name="perk_shqip">Translated into Albanian from:\nHasan Nahi</string>
+    <string name="perk_ang">Translated into English from:\nMuhammad Habib Shakir</string>
+    <string name="perk_tr">Translated into Turkish from:\nAbdulbaki Gölpınarlı</string>
+    <string name="perk_de">Translated into German from:\nAdel Theodor Khoury</string>
+    <string name="originofdb">All translated data are from website \n<a href="http://qurandatabase.org/">http://qurandatabase.org</a>\nWe apologize if there are any errors.</string>
+    <string name="zgjedhsuren_shqip">Select surah</string>
+    <string name="kerkodetalisht">Write the word to search:</string>
+    <string name="zgjedhajetin">Select ayah</string>
+    <string name="listaajeteve">Chosen Category:</string>
+    <string name="ajetikuranor">Ayah in Qur\'an</string>
+    <string name="ajetithot">says:</string>
+    <string name="pershkrimiajetit">Click here for more</string>
+    <string name="ekzistojne">In this category exists </string>
+    <string name="numriiajeteve"> ayah</string>
+    <string name="neemer">In the name of All-llah the most Beneficent the most Merciful</string>
+    <string name="quit">Exit</string>
+    <string name="really_quit">Are you sure you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="wait">Please wait&#8230;</string>
+    <string name="lexokuranin_latin">Read Qur\'an in latin words</string>
+    <string name="neemertransliteration">Bismillaah ir rahmaan ir raheem</string>
+    <string name="nextpage">Next page</string>
+    <string name="prevpage">Previous page</string>
+    <string name="swipeprev">Swipe right to go to previous page</string>
+    <string name="swipenext">Swipe left to go to next page</string>
+    <string name="nomorenext">There is no more pages</string>
+    <string name="nomoreprev">There is no previous pages</string>
+    <string name="ok">All right</string>
+    <string name="instructions">Instructions</string> 
+    <string name="app_descrip2">The purpose of this application is to help people who are interested in understanding Qur\'an, explanations and interpretations of rules, surahs and topics about life in Qur\'an.\n\nIn each windows there can be more than one page, so please swipe your finger to check if there are more pages.\n\nUsage\nIn Main menu are 4 buttons: categories, search, reading Qur\'an in English language, reading Qur\'an in Arabic language with latin words.\n\nCategories:\nOn this page we show a series of topics that Qur\'an talks about. After clicking to the topic that you are interested in it will open a new page where there will be all of ayahs that are talking about that topic. To change the pages you will need only to swipe your finger to the sides.\n\nSearch:\nOn this page there is a text field where you need to type the words you are interested and then we will show a series of topics that match the search. After clicking to the topic that you are interested in it will open a new page where there will be all of ayahs that are talking about that topic. To change the pages you will need only to swipe your finger to the sides.\n\nReading Qur\'an in English language:\nOn this page you can read Qur\'an, first you need to choose the surah you are interested, after selecting the surah you will need to choose the ayah number then the application will highlight the selected ayah. To change the pages you will need only to swipe your finger to the sides.\n\nReading Qur\'an in Arabic language with latin words:\nOn this page you can read Qur\'an, first you need to choose the surah you are interested, after selecting the surah you will need to choose the ayah number then the application will highlight the selected ayah. To change the pages you will need only to swipe your finger to the sides.</string>
+    <string name="lexokuranin_arabisht">Read Qur\'an in Arabic</string>
+
 </resources>
