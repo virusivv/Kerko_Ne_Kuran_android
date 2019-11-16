@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".LexoKuranin">
         </activity>
+        <activity android:name=".KategoriteList">
+        </activity>
     </application>
 
 </manifest>

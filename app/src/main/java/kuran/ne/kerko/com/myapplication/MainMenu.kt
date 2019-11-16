@@ -58,13 +58,27 @@ class MainMenu : AppCompatActivity() {
 
     fun butonsClicked(v: View){
         var dest="";
+        var toReadQuran = true
         when(v.id){
-            R.id.btnLexoKuranin -> { dest = "normal"}
-            R.id.btnLexoKuraninLatin -> {dest="latin"}
-            R.id.btnLexoKuraninArabisht -> {dest="arab"}
-            R.id.btnKategorite -> {dest="kategorite"}
+            R.id.btnLexoKuranin -> {
+                dest = "normal"
+            }
+            R.id.btnLexoKuraninLatin -> {
+                dest="latin"
+            }
+            R.id.btnLexoKuraninArabisht -> {
+                dest="arab"
+            }
+            R.id.btnKategorite -> {
+                dest="kategorite"
+                toReadQuran=false
+            }
         }
-        var intent=Intent(this, LexoKuranin::class.java)
+        var intent=Intent()
+        if (toReadQuran )
+            intent = Intent(this, LexoKuranin::class.java)
+        else
+            intent = Intent(this,KategoriteList::class.java)
         intent.putExtra("Reading Type",dest)
         startAnActivity(intent)
     }
