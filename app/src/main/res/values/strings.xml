@@ -11,11 +11,13 @@
     <string name="about">Rreth aplikacionit</string>
     <string name="version" translatable="false">16</string>
     <string name="app_credit">Krijuesi i aplikacionit:\\nIbrahim Vasija\\n\\nDistributor i aplikacionit:</string>
-	<string name="perk_shqip">Përkthyesi në gjuhën Shqipe:\nHasan Nahi</string>
+    <string name="perk_shqip">Përkthyesi në gjuhën Shqipe:\nHasan Nahi</string>
     <string name="perk_ang">Përkthyesi në gjuhën Angleze:\nMuhammad Habib Shakir</string>
     <string name="perk_tr">Përkthyesi në gjuhën Turke:\nAbdulbaki Gölpınarlı</string>
     <string name="perk_de">Përkthyesi në gjuhën Gjermane:\nAdel Theodor Khoury</string>
-    <string name="originofdb">Të gjitha të dhënat e përkthimeve janë nga faqja \n<a href="http://qurandatabase.org/">http://qurandatabase.org</a>\nJu kërkojmë falje nëse ekziston ndonjë gabim.</string>   
+    <string name="originofdb">Të gjitha të dhënat e përkthimeve janë nga faqja \n<a href="http://qurandatabase.org/">
+        http://qurandatabase.org</a>\nJu kërkojmë falje nëse ekziston ndonjë gabim.
+    </string>
     <string name="zgjedhsuren_shqip">Zgjedh suren</string>
     <string name="kerkodetalisht">Shkruaj fjalën për të kërkuar:</string>
     <string name="zgjedhajetin">Zgjedh ajetin</string>
@@ -23,8 +25,8 @@
     <string name="ajetikuranor">Ajeti Kur\'anor</string>
     <string name="ajetithot">thot:</string>
     <string name="pershkrimiajetit">Kliko këtu për vazhdimin e ajetit</string>
-    <string name="ekzistojne">Në këtë kategori ekzistojnë </string>
-    <string name="numriiajeteve"> ajete</string>
+    <string name="ekzistojne">Në këtë kategori ekzistojnë</string>
+    <string name="numriiajeteve">ajete</string>
     <string name="neemer">Në emër të All-llah\'ut të Gjithëmëshirshmit dhe Mëshirëplotit</string>
     <string name="quit">Dalje</string>
     <string name="really_quit">Jeni të sigurt që dëshironi të dilni?</string>
@@ -40,8 +42,26 @@
     <string name="nomorenext">Nuk ka më faqe të ardhshme</string>
     <string name="nomoreprev">Nuk ka më faqe të kaluar</string>
     <string name="ok">Në rregull</string>
-    <string name="instructions">Instruksionet</string> 
-    <string name="app_descrip2">Ky aplikacion është krijuar me qëllim për t\'ua lehtësuar të gjithë të interesuarve kuptimin dhe mësimin e Kur\'anit, shpjegimin dhe interpretimin e rregullave, sureve dhe temave të ndryshme rreth jetës në Kur\'an.\n\nÇdo dritare mund të ketë më tepër se një faqe, ju lutem ndërroni faqet duke rrëshqitur gishtin tuaj.\n\nPërdorimi\nNë menynë kryesore janë 4 butona: kategoritë, kërkimi i kategorive, leximi i Kur\'anit në gjuhën Shqipe si dhe leximi i Kur\'anit në gjuhen Arabe me shkronja Latine.\n\nKategoritë:\nTe kategoritë kemi një sërë temash për të cilat flet Kur\'ani, pasi të klikoni në temën e cila ju intereson hapet faqja me ajetet ku flitet për temën që ju intereson. Pasi të zgjedhni ajetin e dëshiruar shfaqet ajeti i plotë. Për të ndryshuar faqet rrëshqitni gishtin në anën e dëshiruar.\n\nKërko:\nNë faqen për kërkim ekziston hapësira ku duhet të shënoni kategorinë e kërkuar, pasi të shkruani shkronjat atëhere aplikacioni i gjen të gjitha kategoritë që i përmbajnë ato shkronja;  pasi të klikoni në temën e cila ju intereson hapet faqja me ajetet ku flitet për temën që ju intereson. Pasi të zgjedhni ajetin e dëshiruar shfaqet ajeti i plotë. Për të ndryshuar faqet rrëshqitni gishtin në anën e dëshiruar.\n\nLeximi i Kur\'anit në gjuhën Shqipe:\nNë faqen e leximit të Kur\'an\'it keni mundësinë të zgjedhni suren e dëshiruar, pasi të zgjedhni suren keni mundësinë të zgjedhni edhe ajetin e dëshiruar dhe aplikacioni do të fokusohet në ajetin e zgjedhur. Për të ndryshuar faqet rrëshqitni gishtin në anën e dëshiruar.\n\nLeximi i Kur\'anit në gjuhën Arabe me shkronja Latine:\nNë faqen e leximit të Kur\'an\'it keni mundësinë të zgjedhni suren e dëshiruar, pasi të zgjedhni suren keni mundësinë të zgjedhni edhe ajetin e dëshiruar dhe aplikacioni do të fokusohet në ajetin e zgjedhur. Për të ndryshuar faqet rrëshqitni gishtin në anën e dëshiruar.</string>
+    <string name="instructions">Instruksionet</string>
+    <string name="app_descrip2">Ky aplikacion është krijuar me qëllim për t\'ua lehtësuar të gjithë të interesuarve
+        kuptimin dhe mësimin e Kur\'anit, shpjegimin dhe interpretimin e rregullave, sureve dhe temave të ndryshme rreth
+        jetës në Kur\'an.\n\nÇdo dritare mund të ketë më tepër se një faqe, ju lutem ndërroni faqet duke rrëshqitur
+        gishtin tuaj.\n\nPërdorimi\nNë menynë kryesore janë 4 butona: kategoritë, kërkimi i kategorive, leximi i
+        Kur\'anit në gjuhën Shqipe si dhe leximi i Kur\'anit në gjuhen Arabe me shkronja Latine.\n\nKategoritë:\nTe
+        kategoritë kemi një sërë temash për të cilat flet Kur\'ani, pasi të klikoni në temën e cila ju intereson hapet
+        faqja me ajetet ku flitet për temën që ju intereson. Pasi të zgjedhni ajetin e dëshiruar shfaqet ajeti i plotë.
+        Për të ndryshuar faqet rrëshqitni gishtin në anën e dëshiruar.\n\nKërko:\nNë faqen për kërkim ekziston hapësira
+        ku duhet të shënoni kategorinë e kërkuar, pasi të shkruani shkronjat atëhere aplikacioni i gjen të gjitha
+        kategoritë që i përmbajnë ato shkronja; pasi të klikoni në temën e cila ju intereson hapet faqja me ajetet ku
+        flitet për temën që ju intereson. Pasi të zgjedhni ajetin e dëshiruar shfaqet ajeti i plotë. Për të ndryshuar
+        faqet rrëshqitni gishtin në anën e dëshiruar.\n\nLeximi i Kur\'anit në gjuhën Shqipe:\nNë faqen e leximit të
+        Kur\'an\'it keni mundësinë të zgjedhni suren e dëshiruar, pasi të zgjedhni suren keni mundësinë të zgjedhni edhe
+        ajetin e dëshiruar dhe aplikacioni do të fokusohet në ajetin e zgjedhur. Për të ndryshuar faqet rrëshqitni
+        gishtin në anën e dëshiruar.\n\nLeximi i Kur\'anit në gjuhën Arabe me shkronja Latine:\nNë faqen e leximit të
+        Kur\'an\'it keni mundësinë të zgjedhni suren e dëshiruar, pasi të zgjedhni suren keni mundësinë të zgjedhni edhe
+        ajetin e dëshiruar dhe aplikacioni do të fokusohet në ajetin e zgjedhur. Për të ndryshuar faqet rrëshqitni
+        gishtin në anën e dëshiruar.
+    </string>
     <string name="lexokuranin_arabisht">Lexo Kur\'anin Arabisht</string>
 
 

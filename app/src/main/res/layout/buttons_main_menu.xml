@@ -7,17 +7,29 @@
     <Button
             android:text="@string/kategorite_butoni"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/button"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/btnKategorite"
+            android:onClick="butonsClicked"
+    />
     <Button
             android:text="@string/lexo_kuranin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/button2"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLexoKuranin"
+            android:onClick="butonsClicked"
+    />
     <Button
             android:text="@string/lexokuranin_latin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/button3"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLexoKuraninLatin"
+            android:onClick="butonsClicked"
+    />
     <Button
             android:text="@string/lexokuranin_arabisht"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/button4"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLexoKuraninArabisht"
+            android:onClick="butonsClicked"
+    />
 </LinearLayout>

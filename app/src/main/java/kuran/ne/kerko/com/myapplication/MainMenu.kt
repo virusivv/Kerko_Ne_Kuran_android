@@ -56,6 +56,19 @@ class MainMenu : AppCompatActivity() {
 
     }
 
+    fun butonsClicked(v: View){
+        var dest="";
+        when(v.id){
+            R.id.btnLexoKuranin -> { dest = "normal"}
+            R.id.btnLexoKuraninLatin -> {dest="latin"}
+            R.id.btnLexoKuraninArabisht -> {dest="arab"}
+            R.id.btnKategorite -> {dest="kategorite"}
+        }
+        var intent=Intent(this, LexoKuranin::class.java)
+        intent.putExtra("Reading Type",dest)
+        startAnActivity(intent)
+    }
+
 
     fun startAnActivity(intentToGo: Intent){
         startActivity(intentToGo)
