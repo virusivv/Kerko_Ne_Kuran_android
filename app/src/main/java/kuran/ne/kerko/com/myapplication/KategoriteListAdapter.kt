@@ -33,28 +33,26 @@ package kuran.ne.kerko.com.myapplication
 
 import Models.KategoriteModel
 import android.content.Context
-import android.support.v4.content.ContextCompat
-import android.support.v4.content.res.ResourcesCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.ImageView
 import android.widget.TextView
 
 
 class KategoriteListAdapter(private val context: Context,
-                    private val dataSource: ArrayList<KategoriteModel>) : BaseAdapter() {
+                            private val dataSource: List<KategoriteModel>?
+) : BaseAdapter() {
 
     private val inflater: LayoutInflater
             = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
     override fun getCount(): Int {
-        return dataSource.size
+        return dataSource!!.size
     }
 
     override fun getItem(position: Int): Any {
-        return dataSource[position]
+        return dataSource!![position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -91,9 +89,9 @@ class KategoriteListAdapter(private val context: Context,
         val nrRendor = holder.nrRendor
 
         val kategoria = getItem(position) as KategoriteModel
-        nrRendor.text = (position + 1).toString()
-        AjetiDheSurjaThot.text = kategoria.surja + "-" + kategoria.ajeti_id + " "+ context.getString(R.string.ajetithot)
-        txtAjetiPershkruan.text = kategoria.ajeti
+        nrRendor.text = kategoria.nrRendor.toString()
+        AjetiDheSurjaThot.text = kategoria.tagu
+        txtAjetiPershkruan.text = context.getString(R.string.ekzistojne) + kategoria.numriAjeteve + context.getString(R.string.numriiajeteve)
 
         return view
     }
