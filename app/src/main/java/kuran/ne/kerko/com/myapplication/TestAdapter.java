@@ -2,10 +2,9 @@
 package kuran.ne.kerko.com.myapplication;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import Handlers.DataBaseHelper;
-import android.content.ContentValues;
+import Helpers.DataBaseHelper;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;

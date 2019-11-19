@@ -1,15 +1,16 @@
 package kuran.ne.kerko.com.myapplication
 
-import Handlers.KategoriteDS
+import Helpers.KategoriteDS
+import Helpers.KategoriteListAdapter
 import Models.KategoriteModel
 import android.content.Intent
+import android.content.res.Configuration
 import android.database.Cursor
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.ListView
 import android.widget.Toast
-import java.util.ArrayList
 
 
 class KategoriteList : AppCompatActivity() {
@@ -23,11 +24,7 @@ class KategoriteList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kategorite_list)
 
-        var readType:String = intent.getStringExtra("Reading Type")
-
-
-
-        listView = findViewById<ListView>(R.id.recipe_list_view)
+        listView = findViewById<ListView>(R.id.listKategorite)
 
 
         val mDbHelper = KategoriteDS(this)
@@ -36,8 +33,12 @@ class KategoriteList : AppCompatActivity() {
         if (tagateajeteve != null)
             tagateajeteve!!.close()
         val tekstimarrur = ""
-        categoriesListObject = mDbHelper.viewEmployee(
-            tekstimarrur, "sq"
+
+        val mPrefs = getSharedPreferences("Prefs", 0)
+        val language:String = mPrefs.getString("lang", "")
+
+        categoriesListObject = mDbHelper.getCategoriesBasedOnSearchText(
+            tekstimarrur, language
         )
 
         // TextView txtti= (TextView) findViewById(R.id.txtrezultati);
@@ -55,10 +56,14 @@ class KategoriteList : AppCompatActivity() {
         listView.setOnItemClickListener { _, _, position, _ ->
             val kategoria = categoriesListObject!![position]
 
+            val intent = Intent(this, KategoriListaAjeteve::class.java)
+            intent.putExtra("Category Text",kategoria.kategoria)
+            intent.putExtra("Category ID",kategoria.id)
+            startAnActivity(intent)
             //val detailIntent = RecipeDetailActivity.newIntent(context, selectedRecipe)
 
             //startActivity(detailIntent)
-            Toast.makeText(this,"Tagu eshte: "+kategoria.tagu,Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this,"Tagu eshte: "+kategoria.kategoria,Toast.LENGTH_SHORT).show()
         }
     }
 
