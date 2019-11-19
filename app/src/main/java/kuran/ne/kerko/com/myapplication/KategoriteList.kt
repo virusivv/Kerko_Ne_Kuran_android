@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.ListView
 import android.widget.Toast
+import java.util.ArrayList
 
 
 class KategoriteList : AppCompatActivity() {
@@ -16,7 +17,7 @@ class KategoriteList : AppCompatActivity() {
     private lateinit var listView: ListView
 
     var tagateajeteve: Cursor? = null
-    var kategoriteListaObject: ArrayList<KategoriteModel>? = null
+    var categoriesListObject: List<KategoriteModel>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +36,7 @@ class KategoriteList : AppCompatActivity() {
         if (tagateajeteve != null)
             tagateajeteve!!.close()
         val tekstimarrur = ""
-        val returnList: List<KategoriteModel> = mDbHelper.viewEmployee(
+        categoriesListObject = mDbHelper.viewEmployee(
             tekstimarrur, "sq"
         )
 
@@ -47,17 +48,17 @@ class KategoriteList : AppCompatActivity() {
 
 
 
-        val adapter = KategoriteListAdapter(this, returnList)
+        val adapter = KategoriteListAdapter(this, categoriesListObject)
         listView.adapter = adapter
 
         val context = this
         listView.setOnItemClickListener { _, _, position, _ ->
-            val kategoria = kategoriteListaObject!![position]
+            val kategoria = categoriesListObject!![position]
 
             //val detailIntent = RecipeDetailActivity.newIntent(context, selectedRecipe)
 
             //startActivity(detailIntent)
-            Toast.makeText(this,"Tagu eshte: "+kategoria.tagu,Toast.LENGTH_SHORT)
+            Toast.makeText(this,"Tagu eshte: "+kategoria.tagu,Toast.LENGTH_SHORT).show()
         }
     }
 
