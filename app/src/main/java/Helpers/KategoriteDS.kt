@@ -89,7 +89,7 @@ class KategoriteDS(private val mContext: Context) {
 
 
 
-    fun getAyahsForCategory(kategoria: Int, language: String):List<AjetetPerKategoriModel>{
+    fun getAyahsForCategory(kategoria: KategoriteModel, language: String):List<AjetetPerKategoriModel>{
         val returnList:ArrayList<AjetetPerKategoriModel> = ArrayList<AjetetPerKategoriModel>()
         val sql =
             ("select kategoria_" + language + " as kategoria, ksq.ajeti, ksq.surja, ksq.ajeti_id, ksq.surja_id,"
@@ -97,7 +97,7 @@ class KategoriteDS(private val mContext: Context) {
                     + " from kategori_ajet ka"
                     + " left join kategorite k on k.id = ka.kategori_id"
                     + " left join kuran_" + language + " ksq on ka.ajeti_id=ksq.ajeti_id and ka.surja_id = ksq.surja_id"
-                    + " where k.id = " + kategoria + " order by ksq.surja_id, ksq.ajeti_id")
+                    + " where k.id = " + kategoria.id + " order by ksq.surja_id, ksq.ajeti_id")
         var cursor: Cursor? = null
         try{
             cursor = mDb?.rawQuery(sql, null)

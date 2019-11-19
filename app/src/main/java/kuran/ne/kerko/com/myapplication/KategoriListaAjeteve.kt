@@ -4,6 +4,7 @@ import Helpers.AjetetKategoriteListAdapter
 import Helpers.KategoriteDS
 import Helpers.KategoriteListAdapter
 import Models.AjetetPerKategoriModel
+import Models.KategoriteModel
 import android.content.Intent
 import android.database.Cursor
 import android.support.v7.app.AppCompatActivity
@@ -12,61 +13,66 @@ import android.view.KeyEvent
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
+import android.app.Dialog
+import android.support.v4.app.SupportActivity
+import android.support.v4.app.SupportActivity.ExtraData
+import android.support.v4.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.view.Window
+
 
 class KategoriListaAjeteve : AppCompatActivity() {
     private lateinit var listView: ListView
 
-    var tagateajeteve: Cursor? = null
-    var categoriesListObject: List<AjetetPerKategoriModel>? = null
+    var ayahListForCategory: List<AjetetPerKategoriModel>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kategori_lista_ajeteve)
 
 
-        var categoryText:String = intent.getStringExtra("Category Text")
-        var categoryID:Int = intent.getIntExtra("Category ID",-1)
+        var category:KategoriteModel = intent.extras.get("category") as KategoriteModel
 
         val txtKategoria = findViewById<TextView>(R.id.txtKategoria)
-        txtKategoria.setText(categoryText)
+        txtKategoria.setText(category.kategoria)
 
 
         listView = findViewById<ListView>(R.id.listKategoriteAjetet)
 
-
         val mDbHelper = KategoriteDS(this)
-//		mDbHelper.createDatabase();
         mDbHelper.open()
-        if (tagateajeteve != null)
-            tagateajeteve!!.close()
-        val tekstimarrur = ""
-
         val mPrefs = getSharedPreferences("Prefs", 0)
         val language:String = mPrefs.getString("lang", "")
 
-        categoriesListObject = mDbHelper.getAyahsForCategory(
-            categoryID, language
+        ayahListForCategory = mDbHelper.getAyahsForCategory(
+            category, language
         )
 
-        // TextView txtti= (TextView) findViewById(R.id.txtrezultati);
-        // txtti.setText(rezultati);
         mDbHelper.close()
-        //populateCategories()
 
-
-
-
-        val adapter = AjetetKategoriteListAdapter(this, categoriesListObject)
+        val adapter = AjetetKategoriteListAdapter(this, ayahListForCategory)
         listView.adapter = adapter
 
         val context = this
         listView.setOnItemClickListener { _, _, position, _ ->
-            val kategoria = categoriesListObject!![position]
+            val selectedAyah = ayahListForCategory!![position]
 
-            //val detailIntent = RecipeDetailActivity.newIntent(context, selectedRecipe)
 
-            //startActivity(detailIntent)
-            Toast.makeText(this,"Tagu eshte: "+kategoria.tagu, Toast.LENGTH_SHORT).show()
+            val dialog = Dialog(this)
+            dialog .requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog .setCancelable(false)
+            dialog .setContentView(R.layout.dialog_ayah_category)
+            val ajeti = dialog .findViewById(R.id.txtAjeti) as TextView
+            val surjadheajeti = dialog .findViewById(R.id.txtSurjaAjetiThot) as TextView
+
+            ajeti.setText(selectedAyah.ajeti)
+            surjadheajeti.setText(selectedAyah.surja + " " + selectedAyah.ajeti_id + " " + getString(R.string.ajetithot))
+
+            dialog .show()
+
+
+
+
         }
     }
 

@@ -15,14 +15,14 @@
             android:inputType="textPersonName"
             android:hint="@string/kerkodetalisht"
             android:ems="10"
-            android:id="@+id/txtKerkoTexti"
+            android:id="@+id/edtxtKerkoTexti"
             android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"/>
 
     <View android:layout_width="match_parent" android:layout_height="4px"
           android:background="#3A86B7"
-          android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtKerkoTexti" android:id="@+id/view"
+          android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/edtxtKerkoTexti" android:id="@+id/view"
           app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
           app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
 
