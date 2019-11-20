@@ -2,22 +2,15 @@ package kuran.ne.kerko.com.myapplication
 
 import Helpers.AjetetKategoriteListAdapter
 import Helpers.KategoriteDS
-import Helpers.KategoriteListAdapter
 import Models.AjetetPerKategoriModel
 import Models.KategoriteModel
 import android.content.Intent
-import android.database.Cursor
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.ListView
 import android.widget.TextView
-import android.widget.Toast
 import android.app.Dialog
-import android.support.v4.app.SupportActivity
-import android.support.v4.app.SupportActivity.ExtraData
-import android.support.v4.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.view.Window
 
 
@@ -59,11 +52,11 @@ class KategoriListaAjeteve : AppCompatActivity() {
 
 
             val dialog = Dialog(this)
+            dialog .setCanceledOnTouchOutside(true)
             dialog .requestWindowFeature(Window.FEATURE_NO_TITLE)
-            dialog .setCancelable(false)
             dialog .setContentView(R.layout.dialog_ayah_category)
             val ajeti = dialog .findViewById(R.id.txtAjeti) as TextView
-            val surjadheajeti = dialog .findViewById(R.id.txtSurjaAjetiThot) as TextView
+            val surjadheajeti = dialog .findViewById(R.id.txtAjetiDheSurjaThot) as TextView
 
             ajeti.setText(selectedAyah.ajeti)
             surjadheajeti.setText(selectedAyah.surja + " " + selectedAyah.ajeti_id + " " + getString(R.string.ajetithot))

@@ -61,7 +61,7 @@ class LanguageSelector : AppCompatActivity() {
                 R.id.rdbShqipLanguageSelector ->
                     if (checked) {
                         saveBTN.setText("Ruaj ndryshimet")
-                        lang="al"
+                        lang="sq"
                     }
                 R.id.rdbAnglishtLanguageSelector ->
                     if (checked) {
