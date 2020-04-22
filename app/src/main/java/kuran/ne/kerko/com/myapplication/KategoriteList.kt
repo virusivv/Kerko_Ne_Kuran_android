@@ -8,6 +8,8 @@ import android.content.res.Configuration
 import android.database.Cursor
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.KeyEvent
 import android.widget.EditText
 import android.widget.ListView
@@ -17,6 +19,7 @@ import android.widget.Toast
 class KategoriteList : AppCompatActivity() {
 
     private lateinit var listView: ListView
+    private lateinit var mDbHelper: KategoriteDS
 
     var categoriesListObject: List<KategoriteModel>? = null
 
@@ -27,8 +30,45 @@ class KategoriteList : AppCompatActivity() {
         listView = findViewById<ListView>(R.id.listKategorite)
 
 
-        val mDbHelper = KategoriteDS(this)
+        mDbHelper = KategoriteDS(this)
 
+        getList()
+
+        var editText = findViewById<EditText>(R.id.edtxtKerkoTexti)
+        editText.addTextChangedListener(object : TextWatcher {
+
+            override fun afterTextChanged(s: Editable) {}
+
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                getList()
+            }
+        })
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+        // Handle the back button
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            val intent = Intent(this, MainMenu::class.java)
+            startAnActivity(intent)
+            return true
+        } else {
+            return super.onKeyDown(keyCode, event)
+        }
+
+    }
+
+
+    fun startAnActivity(intentToGo: Intent){
+        startActivity(intentToGo)
+        finish()
+    }
+
+    fun getList(){
         mDbHelper.open()
 
         val tekstimarrur : String = (findViewById(R.id.edtxtKerkoTexti) as EditText).text.toString()
@@ -50,24 +90,6 @@ class KategoriteList : AppCompatActivity() {
             intent.putExtra("category", kategoria)
             startAnActivity(intent)
         }
-    }
-
-    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
-        // Handle the back button
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this, MainMenu::class.java)
-            startAnActivity(intent)
-            return true
-        } else {
-            return super.onKeyDown(keyCode, event)
-        }
-
-    }
-
-
-    fun startAnActivity(intentToGo: Intent){
-        startActivity(intentToGo)
-        finish()
     }
 
 }

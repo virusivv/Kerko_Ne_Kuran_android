@@ -59,7 +59,7 @@ class KategoriListaAjeteve : AppCompatActivity() {
             val surjadheajeti = dialog .findViewById(R.id.txtAjetiDheSurjaThot) as TextView
 
             ajeti.setText(selectedAyah.ajeti)
-            surjadheajeti.setText(selectedAyah.surja + " " + selectedAyah.ajeti_id + " " + getString(R.string.ajetithot))
+            surjadheajeti.setText(selectedAyah.surja + " " + selectedAyah.ajetet_id_text + " " + getString(R.string.ajetithot))
 
             dialog .show()
 

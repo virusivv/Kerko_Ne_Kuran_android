@@ -91,7 +91,7 @@ class AjetetKategoriteListAdapter(private val context: Context,
 
         val kategoria = getItem(position) as AjetetPerKategoriModel
         nrRendor.text = kategoria.nr_rendor.toString()
-        AjetiDheSurjaThot.text = kategoria.surja + " " + kategoria.ajeti_id
+        AjetiDheSurjaThot.text = kategoria.surja + " " + kategoria.ajetet_id_text
         if(kategoria.ajeti.length>=49)
             txtAjetiPershkruan.text = kategoria.ajeti_shkurt + "..."
         else

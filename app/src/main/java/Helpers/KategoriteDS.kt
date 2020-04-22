@@ -116,16 +116,41 @@ class KategoriteDS(private val mContext: Context) {
         if (cursor?.moveToFirst()!!) {
             do {
                 //val id: Int, val tagu: String, val surja_id: Int, val ajeti_id: Int, val surja: String, val ajeti: String
-                id = cursor.getInt(cursor.getColumnIndex("kategori_ajet_id"))
-                tagu = cursor.getString(cursor.getColumnIndex("kategoria"))
-                ajeti_id = cursor.getInt(cursor.getColumnIndex("ajeti_id"))
-                surja_id = cursor.getInt(cursor.getColumnIndex("surja_id"))
-                surja = cursor.getString(cursor.getColumnIndex("surja"))
-                ajeti = cursor.getString(cursor.getColumnIndex("ajeti"))
-                ajet_shkurt=cursor.getString(cursor.getColumnIndex("ajeti_shkurt"))
-                val ajeti= AjetetPerKategoriModel(id,tagu,surja_id,ajeti_id,surja,ajeti,i, ajet_shkurt)
-                returnList.add(ajeti)
-                i++
+                val existingid = returnList.indexOfFirst { it.surja_id ==  cursor.getInt(cursor.getColumnIndex("surja_id")) &&
+                        (it.ajeti_id == cursor.getInt(cursor.getColumnIndex("ajeti_id")) -1 ||
+                                it.ajetet_id_text.contains((cursor.getInt(cursor.getColumnIndex("ajeti_id")) -1).toString())
+                                )}
+                if(existingid == null || existingid == -1){
+                    id = cursor.getInt(cursor.getColumnIndex("kategori_ajet_id"))
+                    tagu = cursor.getString(cursor.getColumnIndex("kategoria"))
+                    ajeti_id = cursor.getInt(cursor.getColumnIndex("ajeti_id"))
+                    surja_id = cursor.getInt(cursor.getColumnIndex("surja_id"))
+                    surja = cursor.getString(cursor.getColumnIndex("surja"))
+                    ajeti = cursor.getString(cursor.getColumnIndex("ajeti"))
+                    ajet_shkurt=cursor.getString(cursor.getColumnIndex("ajeti_shkurt"))
+                    val ajeti= AjetetPerKategoriModel(id,tagu,surja_id,ajeti_id,surja,ajeti,i, ajet_shkurt, ajeti_id.toString())
+                    returnList.add(ajeti)
+                    i++
+                }
+                else
+                {
+                    id = cursor.getInt(cursor.getColumnIndex("kategori_ajet_id"))
+                    tagu = cursor.getString(cursor.getColumnIndex("kategoria"))
+                    ajeti_id = cursor.getInt(cursor.getColumnIndex("ajeti_id"))
+                    surja_id = cursor.getInt(cursor.getColumnIndex("surja_id"))
+                    surja = cursor.getString(cursor.getColumnIndex("surja"))
+                    ajeti = cursor.getString(cursor.getColumnIndex("ajeti"))
+                    ajet_shkurt=cursor.getString(cursor.getColumnIndex("ajeti_shkurt"))
+                    var ajetet_id_text=returnList[existingid].ajetet_id_text
+                    if(ajetet_id_text.contains(" - "))
+                        ajetet_id_text = ajetet_id_text.substring(0, ajetet_id_text.indexOf(" - "))
+                    else{
+                        returnList[existingid].ajeti = "{" + (returnList[existingid].ajeti_id) + "} " + returnList[existingid].ajeti
+                    }
+
+                    returnList[existingid].ajeti += "{" + cursor.getString(cursor.getColumnIndex("ajeti_id")) + "} " + cursor.getString(cursor.getColumnIndex("ajeti"))
+                    returnList[existingid].ajetet_id_text = ajetet_id_text + " - " + cursor.getString(cursor.getColumnIndex("ajeti_id"))
+                }
             } while (cursor.moveToNext())
         }
         return returnList

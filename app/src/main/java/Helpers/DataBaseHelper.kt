@@ -107,12 +107,10 @@ class DataBaseHelper(private val mContext: Context) : SQLiteOpenHelper(mContext,
     }
 
     override fun onCreate(arg0: SQLiteDatabase) {
-        // TODO Auto-generated method stub
 
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        // TODO Auto-generated method stub
 
     }
 
