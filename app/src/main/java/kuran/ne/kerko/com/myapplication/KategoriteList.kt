@@ -4,21 +4,17 @@ import Helpers.KategoriteDS
 import Helpers.KategoriteListAdapter
 import Models.KategoriteModel
 import android.content.Intent
-import android.content.res.Configuration
-import android.database.Cursor
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.KeyEvent
 import android.widget.EditText
-import android.widget.ListView
-import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_kategorite_list.*
 
 
 class KategoriteList : AppCompatActivity() {
 
-    private lateinit var listView: ListView
     private lateinit var mDbHelper: KategoriteDS
 
     var categoriesListObject: List<KategoriteModel>? = null
@@ -27,15 +23,13 @@ class KategoriteList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kategorite_list)
 
-        listView = findViewById<ListView>(R.id.listKategorite)
 
 
         mDbHelper = KategoriteDS(this)
 
         getList()
 
-        var editText = findViewById<EditText>(R.id.edtxtKerkoTexti)
-        editText.addTextChangedListener(object : TextWatcher {
+        edtxtKerkoTexti.addTextChangedListener(object : TextWatcher {
 
             override fun afterTextChanged(s: Editable) {}
 
@@ -71,19 +65,19 @@ class KategoriteList : AppCompatActivity() {
     fun getList(){
         mDbHelper.open()
 
-        val tekstimarrur : String = (findViewById(R.id.edtxtKerkoTexti) as EditText).text.toString()
+        val tekstimarrur : String = (edtxtKerkoTexti).text.toString()
         val mPrefs = getSharedPreferences("Prefs", 0)
-        val language:String = mPrefs.getString("lang", "")
+        val language:String = "sq"//mPrefs.getString("lang", "")
 
         categoriesListObject = mDbHelper.getCategoriesBasedOnSearchText(tekstimarrur, language)
 
         mDbHelper.close()
 
         val adapter = KategoriteListAdapter(this, categoriesListObject)
-        listView.adapter = adapter
+        listKategorite.adapter = adapter
 
         val context = this
-        listView.setOnItemClickListener { _, _, position, _ ->
+        listKategorite.setOnItemClickListener { _, _, position, _ ->
             val kategoria = categoriesListObject!![position]
 
             val intent = Intent(this, KategoriListaAjeteve::class.java)

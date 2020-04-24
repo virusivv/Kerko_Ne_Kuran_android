@@ -33,7 +33,7 @@ class StartActivity : Activity() {
 
         var gjuha = ""
         val mSharedPreference = PreferenceManager.getDefaultSharedPreferences(baseContext)
-        val restoredText = mSharedPreference.getString("lang", null)
+        val restoredText = "sq"//mSharedPreference.getString("lang", null)
         val mDbHelper = TestAdapter(this@StartActivity)
         if (restoredText == null || restoredText === "") {
             gjuha = "sq"

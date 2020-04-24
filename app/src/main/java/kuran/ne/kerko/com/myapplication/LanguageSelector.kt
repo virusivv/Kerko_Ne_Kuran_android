@@ -3,28 +3,14 @@ package kuran.ne.kerko.com.myapplication
 import android.content.res.Configuration
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.view.View
 import android.widget.Button
 import android.widget.RadioButton
 import java.util.*
-import android.R.id.edit
-import android.content.SharedPreferences
-import android.content.DialogInterface
-import android.R.string.yes
-import android.R.string.no
-import android.app.AlertDialog
-import android.content.Context
-import android.content.Intent
-import android.opengl.Visibility
 import android.view.KeyEvent
-import android.view.KeyEvent.KEYCODE_BACK
-import android.R.attr.key
-
-
-
-
-
+import android.app.Dialog
+import android.content.Context
+import kotlinx.android.synthetic.main.activity_language_selector.*
 
 
 class LanguageSelector : AppCompatActivity() {
@@ -32,21 +18,22 @@ class LanguageSelector : AppCompatActivity() {
     var firstRun=""
     var lang=""
 
+    public lateinit var cntx: Context
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_language_selector)
 
 
-        val mPrefs = getSharedPreferences("Prefs", 0)
-        firstRun = mPrefs.getString("lang", "")
+
+        val mPrefs = cntx.getSharedPreferences("Prefs", 0)
+        firstRun = "sq"//mPrefs.getString("lang", "")
 
         if(firstRun!=null && firstRun.trim()!="")
             lang=firstRun
 
-        val backButon=findViewById(R.id.btnSaveLanguageSelector) as Button
-        backButon.setOnClickListener {
-            val intent = Intent(this, MainMenu::class.java)
-            startIntent(intent)
+        btnSaveLanguageSelector.setOnClickListener {
+            startIntent()
         }
     }
 
@@ -84,9 +71,9 @@ class LanguageSelector : AppCompatActivity() {
                 Locale.setDefault(locale)
                 val config = Configuration()
                 config.setLocale(locale)
-                this.resources.updateConfiguration(
+                cntx.resources.updateConfiguration(
                     config,
-                    this@LanguageSelector.getResources().getDisplayMetrics()
+                    cntx.resources.getDisplayMetrics()
                 )
                 saveBTN.visibility=View.VISIBLE
                 if(firstRun==null || firstRun.trim()=="") {
@@ -104,27 +91,19 @@ class LanguageSelector : AppCompatActivity() {
     }
 
 
-    fun startIntent(intentToGo: Intent?){
-            /*val prefs2 = getPreferences(Context.MODE_PRIVATE)
-            val editor2 = prefs2.edit()
-            editor2.putString()
-            editor2.commit()*/
-
-
-        val mPrefs = getSharedPreferences("Prefs", 0)
+    fun startIntent(){
+        val mPrefs = cntx.getSharedPreferences("Prefs", 0)
         val editor = mPrefs.edit()
         editor.putString("lang", lang)
         editor.commit()
-        startActivity(intentToGo)
-        finish()
+        //dismiss()
     }
 
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         // Handle the back button
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this, MainMenu::class.java)
-            startIntent(intent)
+            //dismiss()
             return true
         } else {
             return super.onKeyDown(keyCode, event)

@@ -12,10 +12,11 @@ import android.widget.ListView
 import android.widget.TextView
 import android.app.Dialog
 import android.view.Window
+import kotlinx.android.synthetic.main.activity_kategori_lista_ajeteve.*
+import kotlinx.android.synthetic.main.dialog_ayah_category.*
 
 
 class KategoriListaAjeteve : AppCompatActivity() {
-    private lateinit var listView: ListView
 
     var ayahListForCategory: List<AjetetPerKategoriModel>? = null
 
@@ -26,16 +27,15 @@ class KategoriListaAjeteve : AppCompatActivity() {
 
         var category:KategoriteModel = intent.extras.get("category") as KategoriteModel
 
-        val txtKategoria = findViewById<TextView>(R.id.txtKategoria)
+
         txtKategoria.setText(category.kategoria)
 
 
-        listView = findViewById<ListView>(R.id.listKategoriteAjetet)
 
         val mDbHelper = KategoriteDS(this)
         mDbHelper.open()
         val mPrefs = getSharedPreferences("Prefs", 0)
-        val language:String = mPrefs.getString("lang", "")
+        val language:String = "sq"//mPrefs.getString("lang", "")
 
         ayahListForCategory = mDbHelper.getAyahsForCategory(
             category, language
@@ -44,10 +44,10 @@ class KategoriListaAjeteve : AppCompatActivity() {
         mDbHelper.close()
 
         val adapter = AjetetKategoriteListAdapter(this, ayahListForCategory)
-        listView.adapter = adapter
+        listKategoriteAjetet.adapter = adapter
 
         val context = this
-        listView.setOnItemClickListener { _, _, position, _ ->
+        listKategoriteAjetet.setOnItemClickListener { _, _, position, _ ->
             val selectedAyah = ayahListForCategory!![position]
 
 
@@ -55,11 +55,9 @@ class KategoriListaAjeteve : AppCompatActivity() {
             dialog .setCanceledOnTouchOutside(true)
             dialog .requestWindowFeature(Window.FEATURE_NO_TITLE)
             dialog .setContentView(R.layout.dialog_ayah_category)
-            val ajeti = dialog .findViewById(R.id.txtAjeti) as TextView
-            val surjadheajeti = dialog .findViewById(R.id.txtAjetiDheSurjaThot) as TextView
 
-            ajeti.setText(selectedAyah.ajeti)
-            surjadheajeti.setText(selectedAyah.surja + " " + selectedAyah.ajetet_id_text + " " + getString(R.string.ajetithot))
+            txtAjeti.setText(selectedAyah.ajeti)
+            txtAjetiDheSurjaThot.setText(selectedAyah.surja + " " + selectedAyah.ajetet_id_text + " " + getString(R.string.ajetithot))
 
             dialog .show()
 

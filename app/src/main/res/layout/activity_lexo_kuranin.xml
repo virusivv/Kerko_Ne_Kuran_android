@@ -75,45 +75,7 @@
                     android:layout_marginRight="30dp"
                     android:background="#3A86B7" />
 
-            <TextView
-                    android:id="@+id/textViewajetet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/cboAyahs"
-                    android:layout_marginTop="15dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="30dp"
-                    android:paddingRight="15dp"
-                    android:text="@string/zgjedhajetin" />
 
-            <Spinner
-                    android:id="@+id/cboSurah"
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="30dp"/>
-
-            <Spinner
-                    android:id="@+id/cboAyahs"
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_below="@+id/cboSurah"/>
-
-            <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/cboSurah"
-                    android:layout_toLeftOf="@+id/cboSurah"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="30dp"
-                    android:text="@string/zgjedhsuren_shqip" />
         </RelativeLayout>
         <ImageView
                 android:id="@+id/imgborderbottom"

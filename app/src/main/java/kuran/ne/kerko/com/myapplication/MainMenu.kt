@@ -16,6 +16,7 @@ import android.widget.Toast
 import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.view.View
+import kotlinx.android.synthetic.main.activity_main_menu.*
 import java.util.*
 
 
@@ -25,7 +26,7 @@ class MainMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val mPrefs = getSharedPreferences("Prefs", 0)
-        val firstRun = mPrefs.getString("lang", "")
+        val firstRun = "12"//mPrefs.getString("lang", "")
 
         if(firstRun==null || firstRun.trim()==""){
             val intent = Intent(this, LanguageSelector::class.java)
@@ -48,9 +49,8 @@ class MainMenu : AppCompatActivity() {
         }
 
         setContentView(R.layout.activity_main_menu)
-        val rdbAnglishtSelector= findViewById(R.id.btnChangeLang) as Button
-        rdbAnglishtSelector.setOnClickListener {
-            val intent = Intent(this, LanguageSelector::class.java)
+        btnSettings.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
             startAnActivity(intent)
         }
 
