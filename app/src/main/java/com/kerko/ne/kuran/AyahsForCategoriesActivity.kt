@@ -1,4 +1,4 @@
-package kuran.ne.kerko.com.myapplication
+package com.kerko.ne.kuran
 
 import Helpers.AyahsForCategoriesAdapter
 import Helpers.CategoriesDS

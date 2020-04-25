@@ -1,10 +1,9 @@
-package kuran.ne.kerko.com.myapplication
+package com.kerko.ne.kuran
 
 import android.app.Dialog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
-import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_settings.*
 
 class SettingsActivity : AppCompatActivity() {

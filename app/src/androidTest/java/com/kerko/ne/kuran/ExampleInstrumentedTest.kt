@@ -1,4 +1,4 @@
-package kuran.ne.kerko.com.myapplication
+package com.kerko.ne.kuran
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("kuran.ne.kerko.com.myapplication", appContext.packageName)
+        assertEquals("com.kerko.ne.kuran", appContext.packageName)
     }
 }

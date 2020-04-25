@@ -38,7 +38,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import kuran.ne.kerko.com.myapplication.R
+import com.kerko.ne.kuran.R
 
 
 class AyahsForCategoriesAdapter(private val context: Context,

@@ -1,4 +1,4 @@
-package kuran.ne.kerko.com.myapplication
+package com.kerko.ne.kuran
 
 import android.content.res.Configuration
 import android.support.v7.app.AppCompatActivity
