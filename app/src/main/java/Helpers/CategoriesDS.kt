@@ -1,10 +1,10 @@
 package Helpers
 
-import Models.AjetetPerKategoriModel
+import Models.AyahsForCategoriesModel
 import java.util.ArrayList
 
 
-import Models.KategoriteModel
+import Models.CategoriesModel
 import android.content.Context
 import android.database.Cursor
 import android.database.SQLException
@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.util.Log
 
-class KategoriteDS(private val mContext: Context) {
+class CategoriesDS(private val mContext: Context) {
     private var mDb: SQLiteDatabase? = null
     private val mDbHelper: DataBaseHelper
 
@@ -43,7 +43,7 @@ class KategoriteDS(private val mContext: Context) {
 
 
     @Throws(SQLException::class)
-    fun open(): KategoriteDS {
+    fun open(): CategoriesDS {
         try {
             mDbHelper.openDataBase()
             mDbHelper.close()
@@ -56,8 +56,8 @@ class KategoriteDS(private val mContext: Context) {
         return this
     }
 
-    fun getCategoriesBasedOnSearchText(searchText: String, language: String):List<KategoriteModel>{
-        val returnList:ArrayList<KategoriteModel> = ArrayList<KategoriteModel>()
+    fun getCategoriesBasedOnSearchText(searchText: String, language: String):List<CategoriesModel>{
+        val returnList:ArrayList<CategoriesModel> = ArrayList<CategoriesModel>()
         val sql =
             ("select ta.id as id,ta.kategoria_" + language + " as kategoria, (select count(*) from kategori_ajet where kategori_id=ta.id) as numriIAjeteve from kategorite"
                     + " ta where ta.kategoria_" + language + " like '"
@@ -71,15 +71,15 @@ class KategoriteDS(private val mContext: Context) {
             return ArrayList()
         }
         var id: Int
-        var kategoria: String
-        var numriAjeteve: Int
+        var category: String
+        var ayahsNo: Int
         var i: Int = 1
         if (cursor?.moveToFirst()!!) {
             do {
                 id = cursor.getInt(cursor.getColumnIndex("id"))
-                kategoria = cursor.getString(cursor.getColumnIndex("kategoria"))
-                numriAjeteve = cursor.getInt(cursor.getColumnIndex("numriIAjeteve"))
-                val kat= KategoriteModel(id,kategoria,numriAjeteve,i)
+                category = cursor.getString(cursor.getColumnIndex("kategoria"))
+                ayahsNo = cursor.getInt(cursor.getColumnIndex("numriIAjeteve"))
+                val kat= CategoriesModel(id,category,ayahsNo,i)
                 returnList.add(kat)
                 i++
             } while (cursor.moveToNext())
@@ -89,15 +89,15 @@ class KategoriteDS(private val mContext: Context) {
 
 
 
-    fun getAyahsForCategory(kategoria: KategoriteModel, language: String):List<AjetetPerKategoriModel>{
-        val returnList:ArrayList<AjetetPerKategoriModel> = ArrayList<AjetetPerKategoriModel>()
+    fun getAyahsForCategory(category: CategoriesModel, language: String):List<AyahsForCategoriesModel>{
+        val returnList:ArrayList<AyahsForCategoriesModel> = ArrayList<AyahsForCategoriesModel>()
         val sql =
             ("select kategoria_" + language + " as kategoria, ksq.ajeti, ksq.surja, ksq.ajeti_id, ksq.surja_id,"
                     + " substr(ksq.ajeti,0,50) as ajeti_shkurt, ka.id as kategori_ajet_id, k.id as kategori_id, ksq.id as kuran_id"
                     + " from kategori_ajet ka"
                     + " left join kategorite k on k.id = ka.kategori_id"
                     + " left join kuran_" + language + " ksq on ka.ajeti_id=ksq.ajeti_id and ka.surja_id = ksq.surja_id"
-                    + " where k.id = " + kategoria.id + " order by ksq.surja_id, ksq.ajeti_id")
+                    + " where k.id = " + category.id + " order by ksq.surja_id, ksq.ajeti_id")
         var cursor: Cursor? = null
         try{
             cursor = mDb?.rawQuery(sql, null)
@@ -106,50 +106,49 @@ class KategoriteDS(private val mContext: Context) {
             return ArrayList()
         }
         var id: Int
-        var tagu: String
-        var ajeti_id: Int
-        var surja_id: Int
-        var surja: String
-        var ajeti: String
-        var ajet_shkurt: String
+        var category_text: String
+        var ayahId: Int
+        var surahId: Int
+        var surah: String
+        var ayah: String
+        var shortAyah: String
         var i: Int = 1
         if (cursor?.moveToFirst()!!) {
             do {
-                //val id: Int, val tagu: String, val surja_id: Int, val ajeti_id: Int, val surja: String, val ajeti: String
-                val existingid = returnList.indexOfFirst { it.surja_id ==  cursor.getInt(cursor.getColumnIndex("surja_id")) &&
-                        (it.ajeti_id == cursor.getInt(cursor.getColumnIndex("ajeti_id")) -1 ||
-                                it.ajetet_id_text.contains((cursor.getInt(cursor.getColumnIndex("ajeti_id")) -1).toString())
+                val existingid = returnList.indexOfFirst { it.surah_id ==  cursor.getInt(cursor.getColumnIndex("surja_id")) &&
+                        (it.ayah_id == cursor.getInt(cursor.getColumnIndex("ajeti_id")) -1 ||
+                                it.ayah_ids_text.contains((cursor.getInt(cursor.getColumnIndex("ajeti_id")) -1).toString())
                                 )}
                 if(existingid == null || existingid == -1){
                     id = cursor.getInt(cursor.getColumnIndex("kategori_ajet_id"))
-                    tagu = cursor.getString(cursor.getColumnIndex("kategoria"))
-                    ajeti_id = cursor.getInt(cursor.getColumnIndex("ajeti_id"))
-                    surja_id = cursor.getInt(cursor.getColumnIndex("surja_id"))
-                    surja = cursor.getString(cursor.getColumnIndex("surja"))
-                    ajeti = cursor.getString(cursor.getColumnIndex("ajeti"))
-                    ajet_shkurt=cursor.getString(cursor.getColumnIndex("ajeti_shkurt"))
-                    val ajeti= AjetetPerKategoriModel(id,tagu,surja_id,ajeti_id,surja,ajeti,i, ajet_shkurt, ajeti_id.toString())
-                    returnList.add(ajeti)
+                    category_text = cursor.getString(cursor.getColumnIndex("kategoria"))
+                    ayahId = cursor.getInt(cursor.getColumnIndex("ajeti_id"))
+                    surahId = cursor.getInt(cursor.getColumnIndex("surja_id"))
+                    surah = cursor.getString(cursor.getColumnIndex("surja"))
+                    ayah = cursor.getString(cursor.getColumnIndex("ajeti"))
+                    shortAyah=cursor.getString(cursor.getColumnIndex("ajeti_shkurt"))
+                    val ayah = AyahsForCategoriesModel(id,category_text,surahId,ayahId,surah,ayah,i, shortAyah, ayahId.toString())
+                    returnList.add(ayah)
                     i++
                 }
                 else
                 {
                     id = cursor.getInt(cursor.getColumnIndex("kategori_ajet_id"))
-                    tagu = cursor.getString(cursor.getColumnIndex("kategoria"))
-                    ajeti_id = cursor.getInt(cursor.getColumnIndex("ajeti_id"))
-                    surja_id = cursor.getInt(cursor.getColumnIndex("surja_id"))
-                    surja = cursor.getString(cursor.getColumnIndex("surja"))
-                    ajeti = cursor.getString(cursor.getColumnIndex("ajeti"))
-                    ajet_shkurt=cursor.getString(cursor.getColumnIndex("ajeti_shkurt"))
-                    var ajetet_id_text=returnList[existingid].ajetet_id_text
-                    if(ajetet_id_text.contains(" - "))
-                        ajetet_id_text = ajetet_id_text.substring(0, ajetet_id_text.indexOf(" - "))
+                    category_text = cursor.getString(cursor.getColumnIndex("kategoria"))
+                    ayahId = cursor.getInt(cursor.getColumnIndex("ajeti_id"))
+                    surahId = cursor.getInt(cursor.getColumnIndex("surja_id"))
+                    surah = cursor.getString(cursor.getColumnIndex("surja"))
+                    ayah = cursor.getString(cursor.getColumnIndex("ajeti"))
+                    shortAyah=cursor.getString(cursor.getColumnIndex("ajeti_shkurt"))
+                    var ayahIdsText=returnList[existingid].ayah_ids_text
+                    if(ayahIdsText.contains(" - "))
+                        ayahIdsText = ayahIdsText.substring(0, ayahIdsText.indexOf(" - "))
                     else{
-                        returnList[existingid].ajeti = "{" + (returnList[existingid].ajeti_id) + "} " + returnList[existingid].ajeti
+                        returnList[existingid].ayah = "{" + (returnList[existingid].ayah_id) + "} " + returnList[existingid].ayah
                     }
 
-                    returnList[existingid].ajeti += "{" + cursor.getString(cursor.getColumnIndex("ajeti_id")) + "} " + cursor.getString(cursor.getColumnIndex("ajeti"))
-                    returnList[existingid].ajetet_id_text = ajetet_id_text + " - " + cursor.getString(cursor.getColumnIndex("ajeti_id"))
+                    returnList[existingid].ayah += "{" + cursor.getString(cursor.getColumnIndex("ajeti_id")) + "} " + cursor.getString(cursor.getColumnIndex("ajeti"))
+                    returnList[existingid].ayah_ids_text = ayahIdsText + " - " + cursor.getString(cursor.getColumnIndex("ajeti_id"))
                 }
             } while (cursor.moveToNext())
         }
@@ -244,7 +243,7 @@ class KategoriteDS(private val mContext: Context) {
 		}
 	}*/
 
-
+/*
     fun getcount(gjuha: String): Int {
         var gjuha = gjuha
         try {
@@ -270,7 +269,7 @@ class KategoriteDS(private val mContext: Context) {
         }
 
     }
-
+*/
     /* private KategoriteModel cursorToCategory(Cursor cursor)
     {
     	//0int id,1String question,2String answer1,3String answer2,4String answer3, 5String correct_answer,6String picture_name,7int category_id, 8int test_id

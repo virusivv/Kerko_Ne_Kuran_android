@@ -1,11 +1,9 @@
 package Helpers
 
-import Models.AjetetPerKategoriModel
 import java.util.ArrayList
 
 
-import Models.KategoriteModel
-import Models.KuranModel
+import Models.QuranModel
 import android.content.Context
 import android.database.Cursor
 import android.database.SQLException
@@ -13,7 +11,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.util.Log
 
-class KuranDS(private val mContext: Context) {
+class QuranDS(private val mContext: Context) {
     private var mDb: SQLiteDatabase? = null
     private val mDbHelper: DataBaseHelper
 
@@ -44,7 +42,7 @@ class KuranDS(private val mContext: Context) {
 
 
     @Throws(SQLException::class)
-    fun open(): KuranDS {
+    fun open(): QuranDS {
         try {
             mDbHelper.openDataBase()
             mDbHelper.close()
@@ -94,10 +92,10 @@ class KuranDS(private val mContext: Context) {
         return returnList
     }
 
-    fun get10AyahsForSurah(surjaId: Int, ajetId: Int, language: String):List<KuranModel>{
-        val returnList:ArrayList<KuranModel> = ArrayList<KuranModel>()
+    fun get10AyahsForSurah(surahId: Int, ayahId: Int, language: String):List<QuranModel>{
+        val returnList:ArrayList<QuranModel> = ArrayList<QuranModel>()
         val sql =
-            ("select * from kuran_"+ language +" where surja_id = " + surjaId + " and ajeti_id >= " + ajetId + " limit 10;")
+            ("select * from kuran_"+ language +" where surja_id = " + surahId + " and ajeti_id >= " + ayahId + " limit 10;")
         var cursor: Cursor? = null
         try{
             cursor = mDb?.rawQuery(sql, null)
@@ -106,18 +104,18 @@ class KuranDS(private val mContext: Context) {
             return ArrayList()
         }
         var id: Int
-        var surja: String
-        var surjaId: Int
-        var ajeti: String
-        var ajetId: Int
+        var surah: String
+        var surahId: Int
+        var ayah: String
+        var ayahId: Int
         if (cursor?.moveToFirst()!!) {
             do {
                 id = cursor.getInt(cursor.getColumnIndex("id"))
-                surja = cursor.getString(cursor.getColumnIndex("surja"))
-                surjaId = cursor.getInt(cursor.getColumnIndex("surja_id"))
-                ajeti = cursor.getString(cursor.getColumnIndex("ajeti"))
-                ajetId = cursor.getInt(cursor.getColumnIndex("ajeti_id"))
-                val kat= KuranModel(id,surja,ajeti,surjaId,ajetId)
+                surah = cursor.getString(cursor.getColumnIndex("surja"))
+                surahId = cursor.getInt(cursor.getColumnIndex("surja_id"))
+                ayah = cursor.getString(cursor.getColumnIndex("ajeti"))
+                ayahId = cursor.getInt(cursor.getColumnIndex("ajeti_id"))
+                val kat= QuranModel(id,surah,ayah,surahId,ayahId)
                 returnList.add(kat)
             } while (cursor.moveToNext())
         }

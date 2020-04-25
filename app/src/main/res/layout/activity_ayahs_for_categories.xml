@@ -4,39 +4,46 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".KategoriListaAjeteve">
+        tools:context=".AyahsForCategoriesActivity">
 
     <TextView
-            android:id="@+id/txtKategoria"
+            android:id="@+id/tvCategoryAyahsForCategories"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:ems="10"
-            android:hint="@string/kerkodetalisht"
-            android:inputType="textPersonName"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <View android:layout_width="match_parent" android:layout_height="4px"
+    <View
+            android:id="@+id/viewDivider"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:background="#3A86B7"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtKategoria" android:id="@+id/view"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
-
-    <ListView
-            android:id="@+id/listKategoriteAjetet"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:divider="#3A86B7"
-            android:dividerHeight="4px"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategoryAyahsForCategories" />
+
+    <ListView
+            android:id="@+id/listAyahsForCategories"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:divider="#3A86B7"
+            android:dividerHeight="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/view"
-            android:layout_marginStart="8dp" android:layout_marginEnd="8dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewDivider" />
 </android.support.constraint.ConstraintLayout>

@@ -9,7 +9,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".KategoriListaAjeteve"/>
+        <activity android:name=".AyahsForCategoriesActivity"/>
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -17,10 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenu"/>
-        <activity android:name=".LanguageSelector"/>
-        <activity android:name=".LexoKuranin"/>
-        <activity android:name=".KategoriteList"/>
+        <activity android:name=".MainMenuActivity"/>
+        <activity android:name=".LanguageSelectorActivity"/>
+        <activity android:name=".ReadQuranActivity"/>
+        <activity android:name=".CategoriesActivity"/>
         <activity android:name=".SettingsActivity">
         </activity>
     </application>

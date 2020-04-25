@@ -1,35 +1,32 @@
 package kuran.ne.kerko.com.myapplication
 
-import Helpers.KategoriteDS
-import Helpers.KategoriteListAdapter
-import Models.KategoriteModel
+import Helpers.CategoriesDS
+import Helpers.CategoriesAdapter
+import Models.CategoriesModel
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.KeyEvent
-import android.widget.EditText
-import kotlinx.android.synthetic.main.activity_kategorite_list.*
+import kotlinx.android.synthetic.main.activity_categories.*
 
 
-class KategoriteList : AppCompatActivity() {
+class CategoriesActivity : AppCompatActivity() {
 
-    private lateinit var mDbHelper: KategoriteDS
+    private lateinit var mDbHelper: CategoriesDS
 
-    var categoriesListObject: List<KategoriteModel>? = null
+    var categoriesListObject: List<CategoriesModel>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_kategorite_list)
+        setContentView(R.layout.activity_categories)
 
-
-
-        mDbHelper = KategoriteDS(this)
+        mDbHelper = CategoriesDS(this)
 
         getList()
 
-        edtxtKerkoTexti.addTextChangedListener(object : TextWatcher {
+        etSearchText.addTextChangedListener(object : TextWatcher {
 
             override fun afterTextChanged(s: Editable) {}
 
@@ -47,7 +44,7 @@ class KategoriteList : AppCompatActivity() {
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         // Handle the back button
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this, MainMenu::class.java)
+            val intent = Intent(this, MainMenuActivity::class.java)
             startAnActivity(intent)
             return true
         } else {
@@ -65,23 +62,22 @@ class KategoriteList : AppCompatActivity() {
     fun getList(){
         mDbHelper.open()
 
-        val tekstimarrur : String = (edtxtKerkoTexti).text.toString()
+        val searchText : String = (etSearchText).text.toString()
         val mPrefs = getSharedPreferences("Prefs", 0)
         val language:String = "sq"//mPrefs.getString("lang", "")
 
-        categoriesListObject = mDbHelper.getCategoriesBasedOnSearchText(tekstimarrur, language)
+        categoriesListObject = mDbHelper.getCategoriesBasedOnSearchText(searchText, language)
 
         mDbHelper.close()
 
-        val adapter = KategoriteListAdapter(this, categoriesListObject)
-        listKategorite.adapter = adapter
+        val adapter = CategoriesAdapter(this, categoriesListObject)
+        listCategoryCategories.adapter = adapter
 
-        val context = this
-        listKategorite.setOnItemClickListener { _, _, position, _ ->
-            val kategoria = categoriesListObject!![position]
+        listCategoryCategories.setOnItemClickListener { _, _, position, _ ->
+            val category = categoriesListObject!![position]
+            val intent = Intent(this, AyahsForCategoriesActivity::class.java)
 
-            val intent = Intent(this, KategoriListaAjeteve::class.java)
-            intent.putExtra("category", kategoria)
+            intent.putExtra("category", category)
             startAnActivity(intent)
         }
     }

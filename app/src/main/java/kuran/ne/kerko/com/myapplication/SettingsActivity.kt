@@ -18,11 +18,10 @@ class SettingsActivity : AppCompatActivity() {
     fun setOnClickListeners(){
         btnLanguage.setOnClickListener {
             val dialog = Dialog(this)
-            dialog .setCanceledOnTouchOutside(true)
-            dialog .requestWindowFeature(Window.FEATURE_NO_TITLE)
-            dialog .setContentView(R.layout.activity_language_selector)
-            dialog .show()
-
+            dialog.setCanceledOnTouchOutside(true)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setContentView(R.layout.activity_language_selector)
+            dialog.show()
         }
     }
 

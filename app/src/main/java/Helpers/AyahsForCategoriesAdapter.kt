@@ -31,7 +31,7 @@ package Helpers
  *
  */
 
-import Models.KategoriteModel
+import Models.AyahsForCategoriesModel
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -41,8 +41,8 @@ import android.widget.TextView
 import kuran.ne.kerko.com.myapplication.R
 
 
-class KategoriteListAdapter(private val context: Context,
-                            private val dataSource: List<KategoriteModel>?
+class AyahsForCategoriesAdapter(private val context: Context,
+                                private val dataSource: List<AyahsForCategoriesModel>?
 ) : BaseAdapter() {
 
     private val inflater: LayoutInflater
@@ -64,44 +64,35 @@ class KategoriteListAdapter(private val context: Context,
         val view: View
         val holder: ViewHolder
 
-        // 1
         if (convertView == null) {
 
-            // 2
-            view = inflater.inflate(R.layout.kategorite_list_item, parent, false)
+            view = inflater.inflate(R.layout.list_item_categories, parent, false)
 
-            // 3
             holder = ViewHolder()
-            holder.nrRendor = view.findViewById(R.id.txtNrRendor) as TextView
-            holder.AjetiDheSurjaThot = view.findViewById(R.id.AjetiDheSurjaThot) as TextView
-            holder.txtAjetiPershkruan = view.findViewById(R.id.txtAjetiPershkruan) as TextView
+            holder.tvOrderNo = view.findViewById(R.id.txtNrRendor) as TextView
+            holder.tvTitle = view.findViewById(R.id.AjetiDheSurjaThot) as TextView
+            holder.tvDescription = view.findViewById(R.id.txtAjetiPershkruan) as TextView
 
-            // 4
             view.tag = holder
         } else {
-            // 5
             view = convertView
             holder = convertView.tag as ViewHolder
         }
 
-        // 6
-        val AjetiDheSurjaThot = holder.AjetiDheSurjaThot
-        val txtAjetiPershkruan = holder.txtAjetiPershkruan
-        val nrRendor = holder.nrRendor
-
-        val kategoria = getItem(position) as KategoriteModel
-        nrRendor.text = kategoria.nrRendor.toString()
-        AjetiDheSurjaThot.text = kategoria.kategoria
-        txtAjetiPershkruan.text = context.getString(R.string.ekzistojne) + " " + kategoria.numriAjeteve + " " + context.getString(
-            R.string.numriiajeteve
-        )
+        val category = getItem(position) as AyahsForCategoriesModel
+        holder.tvOrderNo.text = category.orderNo.toString()
+        holder.tvTitle.text = category.surah + " " + category.ayah_ids_text
+        if(category.ayah.length>=49)
+            holder.tvDescription.text = category.shortAyah + "..."
+        else
+            holder.tvDescription.text = category.shortAyah
 
         return view
     }
 
     private class ViewHolder {
-        lateinit var AjetiDheSurjaThot: TextView
-        lateinit var txtAjetiPershkruan: TextView
-        lateinit var nrRendor: TextView
+        lateinit var tvTitle: TextView
+        lateinit var tvDescription: TextView
+        lateinit var tvOrderNo: TextView
     }
 }

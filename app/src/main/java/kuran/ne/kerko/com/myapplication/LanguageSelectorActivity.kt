@@ -8,12 +8,11 @@ import android.widget.Button
 import android.widget.RadioButton
 import java.util.*
 import android.view.KeyEvent
-import android.app.Dialog
 import android.content.Context
 import kotlinx.android.synthetic.main.activity_language_selector.*
 
 
-class LanguageSelector : AppCompatActivity() {
+class LanguageSelectorActivity : AppCompatActivity() {
 
     var firstRun=""
     var lang=""
@@ -50,17 +49,17 @@ class LanguageSelector : AppCompatActivity() {
                         saveBTN.setText("Ruaj ndryshimet")
                         lang="sq"
                     }
-                R.id.rdbAnglishtLanguageSelector ->
+                R.id.rdbEnglishLanguageSelector ->
                     if (checked) {
                         saveBTN.setText("Save Chagnes")
                         lang="en"
                     }
-                R.id.rdbGjermanishtLanguageSelector ->
+                R.id.rdbDeutschLanguageSelector ->
                     if (checked) {
                         saveBTN.setText("Änderungen speichern")
                         lang="de"
                     }
-                R.id.rdbTurqishtLanguageSelector ->
+                R.id.rdbTurkceLanguageSelector ->
                     if (checked) {
                         saveBTN.setText("Değişiklikleri Kaydet")
                         lang="tr"
