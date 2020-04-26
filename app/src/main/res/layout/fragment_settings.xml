@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tvSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:fontFamily="serif-monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Settings"/>
+
+    <LinearLayout
+        android:id="@+id/llPreferences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/bordered_round_background"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/tvSettings">
+
+        <com.kerko.ne.kuran.views.SettingsItem
+            android:id="@+id/siFontSize"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            app:settingIcon="@drawable/ic_font_size"
+            app:settingTitle="Font size"
+            app:settingInfo="12"/>
+
+        <com.kerko.ne.kuran.views.SettingsItem
+            android:id="@+id/siLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            app:settingIcon="@drawable/ic_language"
+            app:settingInfo="English"
+            app:settingTitle="Language" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llAppSupport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/bordered_round_background"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/llPreferences">
+
+        <com.kerko.ne.kuran.views.SettingsItem
+            android:id="@+id/siReportABug"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            app:settingIcon="@drawable/ic_bug_report"
+            app:settingTitle="Report a bug"/>
+
+        <com.kerko.ne.kuran.views.SettingsItem
+            android:id="@+id/siSuggestions"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            app:settingIcon="@drawable/ic_new"
+            app:settingTitle="Suggest features" />
+
+    </LinearLayout>
+
+
+    <com.kerko.ne.kuran.views.SettingsItem
+        android:id="@+id/siAboutUs"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="10dp"
+        app:settingIcon="@drawable/ic_info"
+        app:settingTitle="About us"
+        android:background="@drawable/bordered_round_background"
+        app:layout_constraintTop_toBottomOf="@id/llAppSupport"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

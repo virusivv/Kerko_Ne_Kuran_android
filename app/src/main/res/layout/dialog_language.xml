@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bordered_round_background"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <RadioGroup
+        android:id="@+id/rgLanguages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioAlbanian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shqip"
+            android:textColor="@color/black"
+            android:buttonTint="@color/orange"/>
+
+        <RadioButton
+            android:id="@+id/radioEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:textColor="@color/black"
+            android:buttonTint="@color/orange"
+            />
+
+        <RadioButton
+            android:id="@+id/radioTurkish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Turkce"
+            android:textColor="@color/black"
+            android:buttonTint="@color/orange"/>
+
+        <RadioButton
+            android:id="@+id/radioGerman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deutsche"
+            android:textColor="@color/black"
+            android:buttonTint="@color/orange"/>
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/rgLanguages"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/orange"
+            android:text="Cancel"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="@color/green"
+            android:text="Save"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
