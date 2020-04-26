@@ -5,12 +5,14 @@ import java.util.ArrayList
 
 
 import Models.CategoriesModel
+import Models.HomeModel
 import android.content.Context
 import android.database.Cursor
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.util.Log
+import com.kerko.ne.kuran.QuranApplication
 
 class CategoriesDS(private val mContext: Context) {
     private var mDb: SQLiteDatabase? = null
@@ -56,33 +58,43 @@ class CategoriesDS(private val mContext: Context) {
         return this
     }
 
-    fun getCategoriesCount():Int{
-        var returnItem:Int = 0
+    fun getRandomCategoryAndCount():HomeModel{
+        lateinit var returnItem:HomeModel
+        val language = QuranApplication.instance.getLanguage()
         val sql =
-            ("select count(id) as categories from kategorite")
+            ("SELECT * from kategorite a\n" +
+                    "join (select count(id) as count from kategorite)\n" +
+                    "b on a.id=a.id\n" +
+                    "order by RANDOM() limit 1\n")
         var cursor: Cursor? = null
         try{
             cursor = mDb?.rawQuery(sql, null)
         }catch (e: SQLiteException) {
             mDb?.execSQL(sql)
-            return 0
+            return HomeModel(0,"",0)
         }
-        var i: Int = 1
+        var i: Int = 0
+        var cat: String = ""
+        var c: Int = 0
         if (cursor?.moveToFirst()!!) {
             do {
-                returnItem = cursor.getInt(cursor.getColumnIndex("categories"))
+                i=cursor.getInt(cursor.getColumnIndex("count"))
+                cat=cursor.getString(cursor.getColumnIndex("kategoria_${language?.identificator}"))
+                c= cursor.getInt(cursor.getColumnIndex("id"))
+                returnItem = HomeModel(i, cat, c)
             } while (cursor.moveToNext())
         }
         return returnItem
     }
 
-    fun getCategoriesBasedOnSearchText(searchText: String, language: String):List<CategoriesModel>{
+    fun getCategoriesBasedOnSearchText(searchText: String):List<CategoriesModel>{
+        val language = QuranApplication.instance.getLanguage()
         val returnList:ArrayList<CategoriesModel> = ArrayList<CategoriesModel>()
         val sql =
-            ("select ta.id as id,ta.kategoria_" + language + " as kategoria, (select count(*) from kategori_ajet where kategori_id=ta.id) as numriIAjeteve from kategorite"
-                    + " ta where ta.kategoria_" + language + " like '"
+            ("select ta.id as id,ta.kategoria_" + language?.identificator + " as kategoria, (select count(*) from kategori_ajet where kategori_id=ta.id) as numriIAjeteve from kategorite"
+                    + " ta where ta.kategoria_" + language?.identificator + " like '"
                     + searchText.replace("\'", "\'\'")
-                    + "%' order by ta.kategoria_" + language)
+                    + "%' order by ta.kategoria_" + language?.identificator)
         var cursor: Cursor? = null
         try{
             cursor = mDb?.rawQuery(sql, null)
@@ -109,15 +121,16 @@ class CategoriesDS(private val mContext: Context) {
 
 
 
-    fun getAyahsForCategory(category: CategoriesModel, language: String):List<AyahsForCategoriesModel>{
+    fun getAyahsForCategory(category: Int):List<AyahsForCategoriesModel>{
+        val language = QuranApplication.instance.getLanguage()
         val returnList:ArrayList<AyahsForCategoriesModel> = ArrayList<AyahsForCategoriesModel>()
         val sql =
-            ("select kategoria_" + language + " as kategoria, ksq.ajeti, ksq.surja, ksq.ajeti_id, ksq.surja_id,"
+            ("select kategoria_" + language?.identificator + " as kategoria, ksq.ajeti, ksq.surja, ksq.ajeti_id, ksq.surja_id,"
                     + " substr(ksq.ajeti,0,50) as ajeti_shkurt, ka.id as kategori_ajet_id, k.id as kategori_id, ksq.id as kuran_id"
                     + " from kategori_ajet ka"
                     + " left join kategorite k on k.id = ka.kategori_id"
-                    + " left join kuran_" + language + " ksq on ka.ajeti_id=ksq.ajeti_id and ka.surja_id = ksq.surja_id"
-                    + " where k.id = " + category.id + " order by ksq.surja_id, ksq.ajeti_id")
+                    + " left join kuran_" + language?.identificator + " ksq on ka.ajeti_id=ksq.ajeti_id and ka.surja_id = ksq.surja_id"
+                    + " where k.id = " + category + " order by ksq.surja_id, ksq.ajeti_id")
         var cursor: Cursor? = null
         try{
             cursor = mDb?.rawQuery(sql, null)

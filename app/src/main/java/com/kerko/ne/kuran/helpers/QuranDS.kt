@@ -1,5 +1,6 @@
 package com.kerko.ne.kuran.helpers
 
+import Models.HomeModel
 import java.util.ArrayList
 
 
@@ -10,6 +11,7 @@ import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.util.Log
+import com.kerko.ne.kuran.QuranApplication
 
 class QuranDS(private val mContext: Context) {
     private var mDb: SQLiteDatabase? = null
@@ -54,10 +56,12 @@ class QuranDS(private val mContext: Context) {
 
         return this
     }
-    fun getSurahs(language: String):List<String>{
+    fun getSurahs():List<String>{
+
+        val language = QuranApplication.instance.getLanguage()
         val returnList:ArrayList<String> = ArrayList<String>()
         val sql =
-            ("select distinct(surja) from kuran_"+language+" order by surja_id;")
+            ("select distinct(surja) from kuran_"+language?.identificator+" order by surja_id;")
         var cursor: Cursor? = null
         try{
             cursor = mDb?.rawQuery(sql, null)
@@ -73,10 +77,12 @@ class QuranDS(private val mContext: Context) {
         return returnList
     }
 
-    fun getAyahList(surjaId: Int, language: String):List<Int>{
+    fun getAyahList(surjaId: Int):List<Int>{
+        val language = QuranApplication.instance.getLanguage()
+
         val returnList:ArrayList<Int> = ArrayList<Int>()
         val sql =
-            ("select ajeti_id from kuran_"+language+" where surja_id = "+surjaId)
+            ("select ajeti_id from kuran_"+language?.identificator+" where surja_id = "+surjaId)
         var cursor: Cursor? = null
         try{
             cursor = mDb?.rawQuery(sql, null)
@@ -92,10 +98,12 @@ class QuranDS(private val mContext: Context) {
         return returnList
     }
 
-    fun get10AyahsForSurah(surahId: Int, ayahId: Int, language: String):List<QuranModel>{
+    fun get10AyahsForSurah(surahId: Int, ayahId: Int):List<QuranModel>{
+        val language = QuranApplication.instance.getLanguage()
+
         val returnList:ArrayList<QuranModel> = ArrayList<QuranModel>()
         val sql =
-            ("select * from kuran_"+ language +" where surja_id = " + surahId + " and ajeti_id >= " + ayahId + " limit 10;")
+            ("select * from kuran_"+ language?.identificator +" where surja_id = " + surahId + " and ajeti_id >= " + ayahId + " limit 10;")
         var cursor: Cursor? = null
         try{
             cursor = mDb?.rawQuery(sql, null)

@@ -1,9 +1,11 @@
 package com.kerko.ne.kuran.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
+import com.hannesdorfmann.mosby.mvp.MvpFragment
 import com.kerko.ne.kuran.GeneralFunctions
 import com.kerko.ne.kuran.R
 import com.kerko.ne.kuran.adapters.MainPagerAdapter
@@ -69,5 +71,26 @@ class MainActivity : AppCompatActivity() {
         niAsk.itemClicked(position == 1)
         niRead.itemClicked(position == 2)
         niSettings.itemClicked(position == 3)
+    }
+
+    override fun onBackPressed() {
+        if(mainViewPager.currentItem==1) {
+           val overrideBack = (fragmentList[1] as SearchFragment).onBackPressed()
+            if(!overrideBack)
+                return super.onBackPressed()
+        }
+        else
+            return super.onBackPressed()
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        return super.onKeyDown(keyCode, event)
+    }
+
+    public fun goToCategory(categoryId:Int, categoryText:String){
+        //TODO Implement
+        mainViewPager.currentItem = 1
+        selectItem(1)
+        (fragmentList[1] as SearchFragment).clickedCategory(categoryId, categoryText)
     }
 }

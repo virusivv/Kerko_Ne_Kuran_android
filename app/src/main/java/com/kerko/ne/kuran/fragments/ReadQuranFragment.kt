@@ -23,4 +23,9 @@ class ReadQuranFragment: MvpFragment<ReadQuranView, ReadQuranPresenter>(), ReadQ
 
 
     val TAG = "ReadQuranFragment"
+
+
+    fun myOnKeyDown(key_code: Int) {
+        //do whatever you want here
+    }
 }

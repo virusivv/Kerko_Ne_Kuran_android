@@ -75,4 +75,7 @@ class SettingsFragment : MvpFragment<SettingsView, SettingsPresenter>(), Setting
         updateFontSize()
     }
 
+    fun myOnKeyDown(key_code: Int) {
+        //do whatever you want here
+    }
 }

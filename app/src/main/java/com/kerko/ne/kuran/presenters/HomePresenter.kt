@@ -1,5 +1,6 @@
 package com.kerko.ne.kuran.presenters
 
+import Models.HomeModel
 import android.content.Context
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter
 import com.kerko.ne.kuran.helpers.CategoriesDS
@@ -20,11 +21,11 @@ class HomePresenter : MvpBasePresenter<HomeView>() {
         }
     }
 
-    fun getCategoriesNumber(): Int {
-        var categoriesCount: Int = 0
+    fun getRandomCategoryAndCount(): HomeModel {
+        var categoriesCount: HomeModel = HomeModel(0,"",0)
         mDbHelper?.let {
             it.open()
-            categoriesCount = it.getCategoriesCount()
+            categoriesCount = it.getRandomCategoryAndCount()
             it.close()
         }
         return categoriesCount
