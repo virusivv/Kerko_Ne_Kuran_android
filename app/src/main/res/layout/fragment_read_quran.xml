@@ -151,6 +151,7 @@
                     android:layout_alignParentLeft="true"
                     android:textColor="@color/white"
                     android:padding="10dp"
+                    android:visibility="invisible"
                     android:text="@string/prevpage"/>
                 <Button
                     android:id="@+id/btnNext"
@@ -160,6 +161,7 @@
                     android:layout_alignParentRight="true"
                     android:padding="10dp"
                     android:textColor="@color/white"
+                    android:visibility="invisible"
                     android:text="@string/nextpage"/>
             </RelativeLayout>
         </LinearLayout>

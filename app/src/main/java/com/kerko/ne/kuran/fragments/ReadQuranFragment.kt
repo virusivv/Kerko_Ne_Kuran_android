@@ -46,11 +46,6 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter.init(context)
-        initSpinnerQuranLanguages()
-
-        initSpinnerListeners()
-        initButtonListeners()
     }
 
     fun initButtonListeners() {
@@ -126,7 +121,11 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
         if (isVisibleToUser) {
+            presenter.init(context)
             initSpinnerQuranLanguages()
+
+            initSpinnerListeners()
+            initButtonListeners()
         }
     }
 
