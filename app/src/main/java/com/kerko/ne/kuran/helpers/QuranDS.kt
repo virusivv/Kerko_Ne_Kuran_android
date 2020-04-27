@@ -13,6 +13,9 @@ import android.database.sqlite.SQLiteException
 import android.util.Log
 import com.kerko.ne.kuran.QuranApplication
 
+/**
+ * Created by Ibrhaim Vasija on 26/04/2020
+ **/
 class QuranDS(private val mContext: Context) {
     private var mDb: SQLiteDatabase? = null
     private val mDbHelper: DataBaseHelper
@@ -98,12 +101,12 @@ class QuranDS(private val mContext: Context) {
         return returnList
     }
 
-    fun get10AyahsForSurah(surahId: Int, ayahId: Int):List<QuranModel>{
+    fun get10AyahsForSurah(surahId: Int, ayahId: Int, languageIdentifier: String):List<QuranModel>{
         val language = QuranApplication.instance.getLanguage()
 
         val returnList:ArrayList<QuranModel> = ArrayList<QuranModel>()
         val sql =
-            ("select * from kuran_"+ language?.identificator +" where surja_id = " + surahId + " and ajeti_id >= " + ayahId + " limit 10;")
+            ("select * from kuran_$languageIdentifier where surja_id = $surahId and ajeti_id >= $ayahId limit 10;")
         var cursor: Cursor? = null
         try{
             cursor = mDb?.rawQuery(sql, null)
@@ -123,7 +126,7 @@ class QuranDS(private val mContext: Context) {
                 surahId = cursor.getInt(cursor.getColumnIndex("surja_id"))
                 ayah = cursor.getString(cursor.getColumnIndex("ajeti"))
                 ayahId = cursor.getInt(cursor.getColumnIndex("ajeti_id"))
-                val kat= QuranModel(id,surah,ayah,surahId,ayahId)
+                val kat = QuranModel(id,surah,ayah,surahId,ayahId, languageIdentifier)
                 returnList.add(kat)
             } while (cursor.moveToNext())
         }

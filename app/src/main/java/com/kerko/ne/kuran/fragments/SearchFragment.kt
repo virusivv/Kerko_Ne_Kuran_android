@@ -40,28 +40,13 @@ class SearchFragment : MvpFragment<SearchView, SearchPresenter>(), SearchView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         etSearchText.visibility = View.VISIBLE
         tvCategoryAyahsForCategories.visibility = View.INVISIBLE
         presenter.init(context)
-
-
         etSearchText.addTextChangedListener(object : TextWatcher {
-
             override fun afterTextChanged(s: Editable) {}
-
-            override fun beforeTextChanged(
-                s: CharSequence, start: Int,
-                count: Int, after: Int
-            ) {
-            }
-
-            override fun onTextChanged(
-                s: CharSequence, start: Int,
-                before: Int, count: Int
-            ) {
-                callGetCategories()
-            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) { callGetCategories() }
         })
         callGetCategories()
     }
@@ -81,7 +66,6 @@ class SearchFragment : MvpFragment<SearchView, SearchPresenter>(), SearchView {
                 categoriesListObject
             )
             listCategoryCategories.adapter = adapter
-
             listCategoryCategories.setOnItemClickListener { _, _, position, _ ->
                 selectedCategory = categoriesListObject!![position]
                 clickedCategory(selectedCategory.id, selectedCategory.category)
@@ -96,34 +80,24 @@ class SearchFragment : MvpFragment<SearchView, SearchPresenter>(), SearchView {
         etSearchText.visibility = View.INVISIBLE
         isAyahsListVisible = true
         getAyahsForSelectedCategory(categoryId)
-
     }
-
 
     fun getAyahsForSelectedCategory(selectedId: Int) {
         context?.let {
             val mPrefs = context?.getSharedPreferences("Prefs", 0)
             val language: String = "sq"//mPrefs.getString("lang", "")
-            var ayahListForCategory = presenter.getAyahsForCategory(selectedId, language)
-            val adapter = AyahsForCategoriesAdapter(
-                it,
-                ayahListForCategory
-            )
+            var ayahListForCategory = presenter.getAyahsForCategory(selectedId)
+            val adapter = AyahsForCategoriesAdapter(it, ayahListForCategory)
             listCategoryCategories.adapter = adapter
-
             listCategoryCategories.setOnItemClickListener { _, _, position, _ ->
                 val selectedAyah = ayahListForCategory!![position]
                 isAyahsDialogVisible = true
                 AyahForCategoryDialog(it, selectedAyah)
             }
-
         }
-
     }
 
-
     fun onBackPressed(): Boolean {
-        //do whatever you want here
         if (isAyahsListVisible) {
             tvCategoryAyahsForCategories.visibility = View.INVISIBLE
             etSearchText.visibility = View.VISIBLE
@@ -133,6 +107,4 @@ class SearchFragment : MvpFragment<SearchView, SearchPresenter>(), SearchView {
         } else
             return false
     }
-
-
 }

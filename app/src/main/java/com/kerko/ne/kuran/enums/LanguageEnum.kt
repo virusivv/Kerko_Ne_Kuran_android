@@ -6,7 +6,7 @@ package com.kerko.ne.kuran.enums
 enum class LanguageEnum(val identificator: String, val title: String) {
     Albanian("sq", "Shqip"),
     English("en", "English"),
-    Turkish("tr", "Turkce"),
+    Turkish("tr", "Türkçe"),
     German("de", "Deutsch");
 
     fun id(): String {

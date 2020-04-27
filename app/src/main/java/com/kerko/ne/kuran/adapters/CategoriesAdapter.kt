@@ -41,6 +41,9 @@ import android.widget.TextView
 import com.kerko.ne.kuran.R
 
 
+/**
+ * Created by Ibrahim Vasija on 26/04/2020
+ **/
 class CategoriesAdapter(private val context: Context,
                         private val dataSource: List<CategoriesModel>?
 ) : BaseAdapter() {

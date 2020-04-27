@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import java.util.ArrayList
 
 /**
- * Created by Ardian Ahmeti on 03/07/2020
+ * Created by Ardian Ahmeti on 04/25/2020
  **/
 class MainPagerAdapter(fm: FragmentManager,val fragmentList: ArrayList<Fragment>) : FragmentStatePagerAdapter(fm) {
 

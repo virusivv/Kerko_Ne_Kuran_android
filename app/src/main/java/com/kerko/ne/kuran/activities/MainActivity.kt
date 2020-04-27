@@ -15,6 +15,9 @@ import com.kerko.ne.kuran.fragments.SearchFragment
 import com.kerko.ne.kuran.fragments.SettingsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * Created by Ardian Ahmeti on 04/25/2020
+ **/
 class MainActivity : AppCompatActivity() {
 
     private val fragmentList = arrayListOf<Fragment>(
@@ -88,7 +91,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     public fun goToCategory(categoryId:Int, categoryText:String){
-        //TODO Implement
         mainViewPager.currentItem = 1
         selectItem(1)
         (fragmentList[1] as SearchFragment).clickedCategory(categoryId, categoryText)

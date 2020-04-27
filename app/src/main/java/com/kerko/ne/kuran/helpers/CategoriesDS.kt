@@ -14,6 +14,9 @@ import android.database.sqlite.SQLiteException
 import android.util.Log
 import com.kerko.ne.kuran.QuranApplication
 
+/**
+ * Created by Ibrhaim Vasija on 26/04/2020
+ **/
 class CategoriesDS(private val mContext: Context) {
     private var mDb: SQLiteDatabase? = null
     private val mDbHelper: DataBaseHelper

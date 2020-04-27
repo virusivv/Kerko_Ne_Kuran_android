@@ -10,6 +10,9 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 
+/**
+ * Created by Ibrhaim Vasija on 26/04/2020
+ **/
 class DataBaseHelper(private val mContext: Context) : SQLiteOpenHelper(mContext, DB_NAME, null, 2) {
     private var mDataBase: SQLiteDatabase? = null
 

@@ -32,7 +32,7 @@ class SearchPresenter : MvpBasePresenter<SearchView>() {
         return categoriesListObject
     }
 
-    fun getAyahsForCategory(category: Int, language: String): List<AyahsForCategoriesModel> {
+    fun getAyahsForCategory(category: Int): List<AyahsForCategoriesModel> {
         lateinit var ayahsForCategoryListObject: List<AyahsForCategoriesModel>
         mDbHelper?.let {
             it.open()
