@@ -37,15 +37,38 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
     override fun createPresenter() = ReadQuranPresenter()
 
     val TAG = "ReadQuranFragment"
+    var ayahsText: String = ""
     var languagesList: List<String> = ArrayList<String>()
     private var totalPages: Int = 1
     private var currentPage: Int = 1
-    private var ayahId: Int = 1
-    private var selectedAyahId: Int = 1
+    private var ayahId: Int = 0
+    private var selectedAyahId: Int = 0
     var quranListObject: List<QuranModel> = ArrayList<QuranModel>()
+    val anim = AlphaAnimation(1.0f, 0.0f)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        presenter.init(context)
+
+        anim.duration = 200
+        anim.repeatCount = 1
+        anim.repeatMode = Animation.REVERSE
+
+        anim.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationEnd(animation: Animation?) {}
+            override fun onAnimationStart(animation: Animation?) {}
+            override fun onAnimationRepeat(animation: Animation?) {
+                tvAyahTextReadQuran.text = Html.fromHtml(ayahsText.trim())
+                tvAyahTextReadQuran.post {
+                    scrollToAyah(tvAyahTextReadQuran.lineCount)
+                }
+            }
+        })
+
+        initSpinnerQuranLanguages()
+
+        initSpinnerListeners()
+        initButtonListeners()
     }
 
     fun initButtonListeners() {
@@ -107,26 +130,31 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
                 position: Int,
                 id: Long
             ) {
-                ayahId = position + 1
-                selectedAyahId = position + 1
-                if (ayahId % 10 == 0)
-                    ayahId = ayahId - 9
-                else
-                    ayahId = ayahId - (ayahId % 10 - 1)
-                getAyahsText()
+                    ayahId = position + 1
+                    selectedAyahId = position + 1
+                    if (ayahId % 10 == 0)
+                        ayahId = ayahId - 9
+                    else
+                        ayahId = ayahId - (ayahId % 10 - 1)
+                    getAyahsText()
             }
         }
     }
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
-        if (isVisibleToUser) {
-            presenter.init(context)
-            initSpinnerQuranLanguages()
-
-            initSpinnerListeners()
-            initButtonListeners()
-        }
+//        if (isVisibleToUser) {
+//
+//            ayahsText = ""
+//            languagesList= ArrayList<String>()
+//            totalPages = 1
+//            currentPage = 1
+//            ayahId = 0
+//            selectedAyahId = 0
+//            quranListObject = ArrayList<QuranModel>()
+//
+//
+//        }
     }
 
     fun initSpinnerQuranLanguages() {
@@ -168,7 +196,7 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
             totalPages = (AyahListObject!!.size / 10)
             if (AyahListObject!!.size % 10 > 0)
                 totalPages++
-            getAyahsText()
+//            getAyahsText()
         }
     }
 
@@ -186,6 +214,7 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
 
     fun getAyahsText() {
         var changedPage = false
+        var changedAyah = false
 
         val selectedLanguage: QuranLanguagesEnum? =
             QuranLanguagesEnum.fromTitle(spinnerReadLanguage.selectedItem.toString())
@@ -204,44 +233,37 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
                 )
                 changedPage = true
             }
+            if(selectedAyahId!=spinnerAyah.selectedItemPosition+1)
+                changedAyah = true
             currentPage = quranListObject!![0].ayahId / 10
             if (quranListObject!![0].ayahId % 10 > 0)
                 currentPage++
 
-            var ayahsText = ""
+            var ayahsTextInternal = ""
             for (item in quranListObject!!) {
                 var precode = ""
                 var postcode = ""
                 if (item.ayahId == spinnerAyah.selectedItemPosition + 1) {
-                    precode = "<span style=\"color:#FF8000\">"
+                    precode = "<span style=\"color:#0a67a3\">"//#FF8000\">"
                     postcode = "</span>"
                 }
-
-                ayahsText += precode + "{" + item.ayahId + "}" + " " + item.ayah + postcode
+                ayahsTextInternal += " " +precode + "{" + item.ayahId + "}" + " " + item.ayah + postcode
             }
 
-            if (changedPage) {
-                val anim = AlphaAnimation(1.0f, 0.0f)
-                anim.duration = 200
-                anim.repeatCount = 1
-                anim.repeatMode = Animation.REVERSE
-
-                anim.setAnimationListener(object : Animation.AnimationListener {
-                    override fun onAnimationEnd(animation: Animation?) {}
-                    override fun onAnimationStart(animation: Animation?) {}
-                    override fun onAnimationRepeat(animation: Animation?) {
-                        tvAyahTextReadQuran.text = Html.fromHtml(ayahsText)
-                        tvAyahTextReadQuran.post {
-                            scrollToAyah(tvAyahTextReadQuran.lineCount)
-                        }
+            if(ayahsText=="")
+            {
+                ayahsText = ayahsTextInternal.trim()
+                tvAyahTextReadQuran.text = Html.fromHtml(ayahsTextInternal.trim())
+            }
+            else {
+                if (changedPage) {
+                    ayahsText = ayahsTextInternal.trim()
+                    tvAyahTextReadQuran.startAnimation(anim)
+                } else {// if(changedAyah) {
+                    tvAyahTextReadQuran.text = Html.fromHtml(ayahsTextInternal.trim())
+                    tvAyahTextReadQuran.post {
+                        scrollToAyah(tvAyahTextReadQuran.lineCount)
                     }
-                })
-
-                tvAyahTextReadQuran.startAnimation(anim)
-            } else {
-                tvAyahTextReadQuran.text = Html.fromHtml(ayahsText)
-                tvAyahTextReadQuran.post {
-                    scrollToAyah(tvAyahTextReadQuran.lineCount)
                 }
             }
         }
