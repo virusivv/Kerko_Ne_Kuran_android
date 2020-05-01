@@ -7,6 +7,8 @@ package com.kerko.ne.kuran
 object Constants {
     const val QURAN_PREFERENCES_NAME = "quran-prefs"
 
+    const val APP_FIRST_TIME = "quran-first-time"
+
     const val FONT_PREF = "font-size"
     const val DEFAULT_FONT_SIZE = 16
 

@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#65a6d1</color>
-    <color name="colorPrimaryDark">#0a67a3</color>
+    <color name="colorPrimary">@color/blueLight</color>
+    <color name="colorPrimaryDark">@color/blueDark</color>
     <color name="colorAccent">#D81B60</color>
 
 
-    <color name="blueDark">#3763ab</color>
-    <color name="blueMiddle">#6cb5d9</color>
+    <color name="blueDark">#0a67a3</color>
+    <color name="blueLight">#65a6d1</color>
 
     <color name="white">#ffffff</color>
 
     <color name="green">#2BAE66</color>
     <color name="white_darker">#FCF6F5</color>
 
-    <color name="tanager_tourqoise">#95DBE5</color>
-    <color name="teal_blue">#078282</color>
-    <color name="kelly_green">#339E66</color>
 
 
     <color name="gray_middle">#999999</color>
@@ -25,11 +22,9 @@
     <color name="black">#000000</color>
     <color name="black_transparent">#33000000</color>
 
+    <color name="orange">#FF8000</color>
+    <color name="orange_light">#FFA500</color>
 
-    <color name="orange">@color/colorPrimaryDark</color>
-    <color name="orange_light">@color/colorPrimary</color>
-    <!--<color name="orange">#FF8000</color>
-    <color name="orange_light">#FFA500</color>-->
     <color name="transparent">#00000000</color>
 
     <color name="red">#D50000</color>

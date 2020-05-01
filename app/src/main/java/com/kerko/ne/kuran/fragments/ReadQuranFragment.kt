@@ -161,7 +161,7 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
         context?.let {
             languagesList = QuranLanguagesEnum.toStringList();
             val arrayAdapter = ArrayAdapter(it, android.R.layout.simple_spinner_item, languagesList)
-            arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            arrayAdapter.setDropDownViewResource(R.layout.spinner_item_layout)
             spinnerReadLanguage.adapter = arrayAdapter
 
             val quranLang: QuranLanguagesEnum? = QuranApplication.instance.getQuranLanguage()
@@ -179,7 +179,7 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
             var surahsListObject = presenter.getSurahs()
             val arrayAdapter =
                 ArrayAdapter(it, android.R.layout.simple_spinner_item, surahsListObject)
-            arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            arrayAdapter.setDropDownViewResource(R.layout.spinner_item_layout)
             spinnerSurah.adapter = arrayAdapter
             initSpinnerAyahList()
         }
@@ -190,7 +190,7 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
             var AyahListObject = presenter.getAyahsNumbers(spinnerSurah.selectedItemPosition + 1)
             val arrayAdapter =
                 ArrayAdapter(it, android.R.layout.simple_spinner_item, AyahListObject)
-            arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            arrayAdapter.setDropDownViewResource(R.layout.spinner_item_layout)
             spinnerAyah.adapter = arrayAdapter
 
             totalPages = (AyahListObject!!.size / 10)

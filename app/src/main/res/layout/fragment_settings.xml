@@ -21,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Settings"/>
+        android:text="@string/settings"/>
 
     <LinearLayout
         android:id="@+id/llPreferences"
@@ -40,7 +40,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
             app:settingIcon="@drawable/ic_font_size"
-            app:settingTitle="Font size"
+            app:settingTitle="@string/font_size"
             app:settingInfo="12"/>
 
         <com.kerko.ne.kuran.views.SettingsItem
@@ -49,8 +49,8 @@
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
             app:settingIcon="@drawable/ic_language"
-            app:settingInfo="English"
-            app:settingTitle="Language" />
+            app:settingInfo="@string/language"
+            app:settingTitle="@string/language" />
 
     </LinearLayout>
 
@@ -69,7 +69,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
             app:settingIcon="@drawable/ic_bug_report"
-            app:settingTitle="Report a bug"/>
+            app:settingTitle="@string/report_a_bug"/>
 
         <com.kerko.ne.kuran.views.SettingsItem
             android:id="@+id/siSuggestions"
@@ -77,7 +77,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
             app:settingIcon="@drawable/ic_new"
-            app:settingTitle="Suggest features" />
+            app:settingTitle="@string/suggest_features" />
 
     </LinearLayout>
 
@@ -88,7 +88,7 @@
         android:layout_height="45dp"
         android:layout_margin="10dp"
         app:settingIcon="@drawable/ic_info"
-        app:settingTitle="About us"
+        app:settingTitle="@string/about"
         android:background="@drawable/bordered_round_background"
         app:layout_constraintTop_toBottomOf="@id/llAppSupport"/>
 

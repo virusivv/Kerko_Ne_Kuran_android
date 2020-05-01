@@ -51,6 +51,13 @@
     <string name="about">Über</string>
     <string name="lexokuranin_arabisht">Qur\'an in Arabisch lesen</string>
     <string name="font_size">Madhesia e tekstit</string>
+    <string name="home">Zuhause</string>
+
+    <string name="settings">Settings de</string>
+    <string name="language">Language de</string>
+    <string name="report_a_bug">Report a bug de</string>
+    <string name="suggest_features">Suggest features de</string>
+
 
 
 </resources>

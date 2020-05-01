@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.hannesdorfmann.mosby.mvp.MvpFragment
 import com.kerko.ne.kuran.GeneralFunctions
+import com.kerko.ne.kuran.QuranApplication
 import com.kerko.ne.kuran.R
 import com.kerko.ne.kuran.adapters.MainPagerAdapter
 import com.kerko.ne.kuran.fragments.HomeFragment
@@ -36,7 +37,6 @@ class MainActivity : AppCompatActivity() {
 
         setupClickListeners()
         initFragments()
-
 
     }
 

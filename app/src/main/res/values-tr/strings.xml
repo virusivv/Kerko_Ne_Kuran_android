@@ -42,5 +42,10 @@
     <string name="about">Hakkında</string>
     <string name="lexokuranin_arabisht">Arapça Kur\'an oku</string>
     <string name="font_size">Yazilarin buyuklugu</string>
+    <string name="home">Anasayfa</string>
+    <string name="settings">Settings tr</string>
+    <string name="language">Language tr</string>
+    <string name="report_a_bug">Report a bug tr</string>
+    <string name="suggest_features">Suggest features tr</string>
 
 </resources>

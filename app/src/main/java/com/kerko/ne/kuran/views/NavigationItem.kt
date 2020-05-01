@@ -49,17 +49,18 @@ class NavigationItem(context: Context, attrs: AttributeSet?) : LinearLayout(cont
 
         setOnClickListener {
             isClicked = !isClicked
-
-            icon.setColorFilter(ContextCompat.getColor(context, if(isClicked) R.color.orange else R.color.black))
-            icon.setImageResource(if (isClicked) clickedIcon else normalIcon)
+            updateUI()
         }
 
     }
 
     fun itemClicked(isClicked: Boolean) {
         this.isClicked = isClicked
+        updateUI()
+    }
 
-        icon.setColorFilter(ContextCompat.getColor(context, if(isClicked) R.color.orange else R.color.black))
+    private fun updateUI() {
+        icon.setColorFilter(ContextCompat.getColor(context, if(isClicked) R.color.colorPrimaryDark else R.color.black))
         icon.setImageResource(if (isClicked) clickedIcon else normalIcon)
     }
 }

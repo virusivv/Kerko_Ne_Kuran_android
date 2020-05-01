@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="Shqip"
             android:textColor="@color/black"
-            android:buttonTint="@color/orange"/>
+            android:buttonTint="@color/colorPrimaryDark"/>
 
         <RadioButton
             android:id="@+id/radioEnglish"
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="English"
             android:textColor="@color/black"
-            android:buttonTint="@color/orange"
+            android:buttonTint="@color/colorPrimaryDark"
             />
 
         <RadioButton
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:text="Turkce"
             android:textColor="@color/black"
-            android:buttonTint="@color/orange"/>
+            android:buttonTint="@color/colorPrimaryDark"/>
 
         <RadioButton
             android:id="@+id/radioGerman"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:text="Deutsche"
             android:textColor="@color/black"
-            android:buttonTint="@color/orange"/>
+            android:buttonTint="@color/colorPrimaryDark"/>
 
     </RadioGroup>
 
@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:backgroundTint="@color/orange"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:text="Cancel"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"

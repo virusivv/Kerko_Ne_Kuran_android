@@ -41,7 +41,8 @@
         android:layout_marginEnd="30dp"
         app:layout_constraintBottom_toBottomOf="@id/tvSelectLanguage"
         app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/black"/>
+        android:backgroundTint="@color/black"
+        android:outlineSpotShadowColor="@color/red"/>
 
     <TextView
         android:id="@+id/tvSelectSurah"
@@ -93,7 +94,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:background="@drawable/bordered_round_background"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSelectAyah" />

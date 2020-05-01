@@ -13,7 +13,7 @@
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:text="Home"
+        android:text="@string/home"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:fontFamily="serif-monospace"
