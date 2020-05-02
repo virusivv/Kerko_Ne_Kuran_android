@@ -6,68 +6,48 @@
     android:focusableInTouchMode="true"
     >
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="match_parent"
+
+    <ImageView
+        android:id="@+id/separator"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:fontFamily="serif-monospace"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/subject_background_only_top"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Search"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:adjustViewBounds="true"
+        >
+
+    </ImageView>
 
     <EditText
         android:id="@+id/etSearchText"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/kerkodetalisht"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/separator"
         android:visibility="invisible"
         />
     <TextView
         android:id="@+id/tvCategoryAyahsForCategories"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:gravity="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/separator"
         android:visibility="visible"
-        android:background="@drawable/ic_bismilah_background"
         />
-
-
-    <View
-        android:id="@+id/viewDivider"
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/bordered_round_background"
-        android:backgroundTint="#3A86B7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etSearchText" />
 
     <ListView
         android:id="@+id/listCategoryCategories"
@@ -82,5 +62,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewDivider" />
+        app:layout_constraintTop_toBottomOf="@+id/etSearchText"
+        app:layout_constraintBottom_toTopOf="@+id/bottom"/>
+
+
+    <ImageView
+        android:id="@+id/bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/subject_background_only_top"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:adjustViewBounds="true"
+        >
+
+    </ImageView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,25 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
-
-    <TextView
-        android:id="@+id/tvReadQuranTitle"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/separator"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="serif-monospace"
-        android:text="Read Quran"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/subject_background_only_top"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:adjustViewBounds="true"
+        >
+
+    </ImageView>
 
     <TextView
         android:id="@+id/tvSelectLanguage"
@@ -32,7 +28,7 @@
         android:text="Choose language"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvReadQuranTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/separator" />
 
     <Spinner
         android:id="@+id/spinnerReadLanguage"
@@ -88,7 +84,7 @@
     <View
         android:id="@+id/viewDivider"
         android:layout_width="match_parent"
-        android:layout_height="4dp"
+        android:layout_height="2dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -164,6 +160,17 @@
                     android:visibility="invisible"
                     android:text="@string/nextpage"/>
             </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/subject_background_only_top"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:adjustViewBounds="true"
+                />
         </LinearLayout>
 
     </ScrollView>
