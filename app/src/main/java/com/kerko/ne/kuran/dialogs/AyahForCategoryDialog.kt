@@ -25,7 +25,7 @@ class AyahForCategoryDialog(context: Context, ayah: AyahsForCategoriesModel) : D
     }
 
     private fun updateAyahTextsViews() {
-        tvAyahNoSurahSays.text=selectedAyah.surah + " " + selectedAyah.ayah_ids_text + " " + context.getString(R.string.ajetithot)
+        tvAyahNoSurahSays.text=selectedAyah.surah + " " + selectedAyah.ayah_ids_text + " " + context.getString(R.string.says)
         tvDescription.text=selectedAyah.ayah
     }
 

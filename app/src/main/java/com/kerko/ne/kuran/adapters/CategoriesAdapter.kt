@@ -85,8 +85,8 @@ class CategoriesAdapter(private val context: Context,
         val category = getItem(position) as CategoriesModel
         holder.tvOrderNo.text = category.orderNo.toString()
         holder.tvTitle.text = category.category
-        holder.tvDescription.text = context.getString(R.string.ekzistojne) + " " + category.ayahsNo + " " + context.getString(
-            R.string.numriiajeteve
+        holder.tvDescription.text = context.getString(R.string.in_this_topic_exists) + " " + category.ayahsNo + " " + context.getString(
+            R.string.ayahs
         )
 
         return view

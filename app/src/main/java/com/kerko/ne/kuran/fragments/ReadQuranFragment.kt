@@ -73,10 +73,10 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
 
     fun initButtonListeners() {
         btnNext.setOnClickListener {
-            spinnerAyah.setSelection(quranListObject[quranListObject.size-1].ayahId)
+            spinnerAyah.setSelection(quranListObject[quranListObject.size - 1].ayahId)
         }
         btnPrevious.setOnClickListener {
-            spinnerAyah.setSelection(quranListObject[0].ayahId-11)
+            spinnerAyah.setSelection(quranListObject[0].ayahId - 11)
         }
     }
 
@@ -130,20 +130,30 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
                 position: Int,
                 id: Long
             ) {
-                    ayahId = position + 1
-                    selectedAyahId = position + 1
-                    if (ayahId % 10 == 0)
-                        ayahId = ayahId - 9
-                    else
-                        ayahId = ayahId - (ayahId % 10 - 1)
-                    getAyahsText()
+                ayahId = position + 1
+                selectedAyahId = position + 1
+                if (ayahId % 10 == 0)
+                    ayahId = ayahId - 9
+                else
+                    ayahId = ayahId - (ayahId % 10 - 1)
+                getAyahsText()
             }
         }
     }
 
+    public fun checkNewLanguage(){
+        val newLangList = QuranLanguagesEnum.toStringList()
+        if (newLangList[0] != languagesList[0]) {
+            languagesList = newLangList
+            initSpinnerQuranLanguages()
+        }
+    }
+
+
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
-//        if (isVisibleToUser) {
+        if (isVisibleToUser) {
+            checkNewLanguage()
 //
 //            ayahsText = ""
 //            languagesList= ArrayList<String>()
@@ -154,7 +164,7 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
 //            quranListObject = ArrayList<QuranModel>()
 //
 //
-//        }
+        }
     }
 
     fun initSpinnerQuranLanguages() {
@@ -233,7 +243,7 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
                 )
                 changedPage = true
             }
-            if(selectedAyahId!=spinnerAyah.selectedItemPosition+1)
+            if (selectedAyahId != spinnerAyah.selectedItemPosition + 1)
                 changedAyah = true
             currentPage = quranListObject!![0].ayahId / 10
             if (quranListObject!![0].ayahId % 10 > 0)
@@ -247,15 +257,13 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
                     precode = "<span style=\"color:#0a67a3\">"//#FF8000\">"
                     postcode = "</span>"
                 }
-                ayahsTextInternal += " " +precode + "{" + item.ayahId + "}" + " " + item.ayah + postcode
+                ayahsTextInternal += " " + precode + "{" + item.ayahId + "}" + " " + item.ayah + postcode
             }
 
-            if(ayahsText=="")
-            {
+            if (ayahsText == "") {
                 ayahsText = ayahsTextInternal.trim()
                 tvAyahTextReadQuran.text = Html.fromHtml(ayahsTextInternal.trim())
-            }
-            else {
+            } else {
                 if (changedPage) {
                     ayahsText = ayahsTextInternal.trim()
                     tvAyahTextReadQuran.startAnimation(anim)

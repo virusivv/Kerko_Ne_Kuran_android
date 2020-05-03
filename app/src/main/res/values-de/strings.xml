@@ -1,56 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kërko në Kur\'an</string>
-    <string name="kategorite_butoni">Kategorien</string>
-    <string name="lexo_kuranin">Kur\'an lese</string>
-    <string name="kthehu_butoni">Zurück</string>
-    <string name="vazhdo_butoni">Weiter</string>
-    <string name="app_name_translated">Suche im Kur\'an</string>
-    <string name="settings_butoni">Einstellungen</string>
-    <string name="app_credit">    App- Entwickler:\nIbrahim Vasija\n\nApp- Vertrieb:</string>
-    <string name="perk_shqip">Übersetzung ins Albanische:
-    Hasan Nahi</string>
-    <string name="perk_ang">Übersetzung ins Englische:
-    Muhammad Habib Shakir</string>
-    <string name="perk_tr">Übersetzung ins Türkische:
-    Abdulbaki Gölpınarlı</string>
-    <string name="perk_de">Übersetzung ins Deutsch:\nAdel Theodor Khoury</string>
-    <string name="originofdb"> Alle übersetzten Inhalte sind Eigentum von: \n<a href="http://qurandatabase.org/">http://qurandatabase.org</a>\n Wir entschuldigen uns für mögliche Fehler.</string>
-    <string name="zgjedhsuren_shqip">Sure auswählen</string>
-    <string name="kerkodetalisht">Suchbegriff eingeben:</string>
-    <string name="zgjedhajetin">Vers auswählen</string>
-    <string name="listaajeteve">Kategorie wählen:</string>
-    <string name="ajetikuranor">Vers im Qur\'an</string>
-    <string name="ajetithot">sagt:</string>
-    <string name="pershkrimiajetit">Klicke hier für mehr</string>
-    <string name="ekzistojne">In dieser Kategorie existiert </string>
-    <string name="numriiajeteve"> Vers</string>
-    <string name="neemer">Im Namen Allahs, des Allerbarmers, des Barmherzigen</string>
-    <string name="quit">Verlassen</string>
-    <string name="really_quit">Sicher verlassen?</string>
-    <string name="yes">Ja</string>
-    <string name="no">Nein</string>
-    <string name="wait">Bitte warten&#8230;</string>
-    <string name="lexokuranin_latin">Qur\'an in Lateinischen Buchstaben lesen</string>
-    <string name="neemertransliteration">Bismillaah ir rahmaan ir raheem</string>
-    <string name="nextpage">Nächste Seite</string>
-    <string name="prevpage">Vorherige Seite</string>
-    <string name="swipeprev">Nach rechts wischen für vorherige Seite</string>
-    <string name="swipenext">Nach Links wischen für nächste Seite</string>
-    <string name="nomorenext">Keine weiteren Seiten</string>
-    <string name="nomoreprev">Keine vorherigen Seiten</string>
-    <string name="ok">In Ordnung</string>
-    <string name="instructions">Anleitung</string> 
-    <string name="app_descrip2">Der Zweck dieser App ist es, Leuten zu helfen die darin interessiert sind den Qur\'an zu verstehen, Regeln zu erklären und interpretieren, sowie Suren und Themen übers Leben aus dem Qur\'an zu vermitteln.\n\nIn allen Fenstern kann sich mehr als eine Seite befinden, also bitte zur Seite wischen um sicher zu gehen, dass keine weiteren Seiten vorhanden sind.\n\nDas Häuptmenü ist über 4 Knöpfe zu bedienen: Kategorien, Suche, Qur\'an auf Englisch lesen, Qur\'an auf arabisch mit lateinischen Buchstaben lesen.\n\nKategorien:\nAuf dieser Seite zeigen wir eine Serie von Themen, über die der Qur\'an erzählt. Nach Auswahl des Themas, öffnet sich eine neue Seite, die alle Verse über dieses Thema zeigt. Zum wechseln der Seite muss man nur mit dem Finger seitlich wischen.
+    <string name="app_name">Suche im Qur\'an</string>
 
-\n\nSuche:\nAuf dieser Seite ist ein Textfeld in dem Suchbegriffe eingegeben werden und alle dazu passenden Themen angezeigt werden. Nach dem auswählen des Themas, öffnet sich eine neue Seite, die alle Verse über dieses Thema anzeigt. Um zwischen den Seiten zu wählen müssen sie nur mit den Fingern seitlich wischen.
-
-\n\nQur\'an auf Deutsch lesen:\nAuf dieser Seite können sie den Qur\'an auf deutsch lesen, zunächst suchen sie die Sure die sie interessiert, danach suchen sie den gewünschten Vers, welcher dann hervorgehoben wird. Um zwischen den Seiten zu wählen müssen sie nur mit den Fingern seitlich wischen.
-
-\n\nQur\'an auf arabisch mit lateinischen Buchstaben lesen:\nAuf dieser Seite können sie den Qur\'an auf arabisch mit lateinischen Buchstaben lesen, zunächst suchen sie die Sure die sie interessiert, danach suchen sie den gewünschten Vers, welcher dann hervorgehoben wird. Um zwischen den Seiten zu wählen müssen sie nur mit den Fingern seitlich wischen.</string>
-    <string name="about">Über</string>
-    <string name="lexokuranin_arabisht">Qur\'an in Arabisch lesen</string>
-    <string name="font_size">Madhesia e tekstit</string>
+    <string name="welcome_text">Willkommen, derzeit sind insgesamt% d verfügbare Themen aus dem Qur\'an verfügbar.</string>
+    <string name="random_topic_text">Dürfen wir Ihnen ein zufälliges Thema vorschlagen? Bitte klicken Sie hier, wenn Sie lesen möchten über: %s</string>
+    <string name="write_topic_search">Schreiben Sie das zu suchende Wort:</string>
+    <string name="in_this_topic_exists">In diesem Thema gibt es </string>
+    <string name="ayahs">Ayahs.</string>
+    <string name="quranic_verse">"Ayah im Qur\'an"</string>
+    <string name="says">sagt:</string>
+    <string name="select_language">Sprache auswählen</string>
+    <string name="select_surah">Sure auswählen</string>
+    <string name="select_ayah">Ayah auswählen</string>
+    <string name="in_the_name">"Im Namen Allahs, des Allerbarmers, des Barmherzigen"</string>
+    <string name="in_the_name_transliteration">Bismillaah ir rahmaan ir raheem</string>
+    <string name="in_the_name_arabic">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</string>
+    <string name="font_size">Schriftgröße</string>
+    <string name="language">Sprache</string>
+    <string name="report_bug">Fehler melden</string>
+    <string name="suggest_features">Funktionen vorschlagen</string>
+    <string name="about_us">Über uns</string>
+    <string name="developers">Anwendungsentwickler:
+        Ibrahim Vasija
+        Ardian Ahmeti</string>
+    <string name="db_info">"Alle übersetzten Inhalte sind Eigentum von:
+"<a href="http://qurandatabase.org/">http://qurandatabase.org</a>"
+ Wir entschuldigen uns für mögliche Fehler."</string>
+    <string name="translator_en">"Übersetzung ins Englische:
+        Muhammad Habib Shakir"</string>
+    <string name="translator_de">"Übersetzung ins Deutsch:
+        Adel Theodor Khoury"</string>
+    <string name="translator_sq">"Übersetzung ins Albanische:
+        Hasan Nahi"</string>
+    <string name="translator_tr">"Übersetzung ins Türkische:
+        Abdulbaki Gölpınarlı"</string>
+    <string name="save">Speichern</string>
+    <string name="cancel">Stornieren</string>
+    <string name="settings">Einstellungen</string>
+    <string name="special_thanks">"Besonderes Dankeschön an:
+Labinot Gashi Übersetzung ins Deutsche."</string>
+    <string name="next_page">Nächste Seite</string>
+    <string name="previous_page">Vorherige Seite</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 
 </resources>

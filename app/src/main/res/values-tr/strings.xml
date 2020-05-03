@@ -1,46 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kërko në Kur\'an</string>
-    <string name="kategorite_butoni">Kategoriler</string>
-    <string name="lexo_kuranin">Kur\'an oku</string>
-    <string name="kthehu_butoni">Geri</string>
-    <string name="vazhdo_butoni">Devam</string>
-    <string name="app_name_translated">Kuran\'da ara</string>
-    <string name="settings_butoni">Tercihler</string>
-    <string name="app_credit">Uygulama geliştiricisi:\nIbrahim Vasija\n\nUygulma dağıtıcısı:</string>
-    <string name="perk_shqip">Arnavutçaya tercüme eden:\nHasan Nahi</string>
-    <string name="perk_ang">Ingilizceye tercüme eden:\nMuhammad Habib Shakir</string>
-    <string name="perk_tr">Türkçeye tercüme eden:\nAbdulbaki Gölpınarlı</string>
-    <string name="perk_de">Almancaya tercüme eden:\nAdel Theodor Khoury</string>
-    <string name="originofdb">Bütün tercümeler \n<a href="http://qurandatabase.org/">http://qurandatabase.org</a>\n web sitesinden alınmıştır\nHerhangi bir hata varsa özür dileriz.</string>
-    <string name="zgjedhsuren_shqip">Sure seç</string>
-    <string name="kerkodetalisht">Aramak için kelime yazın:</string>
-    <string name="zgjedhajetin">Ayet seç</string>
-    <string name="listaajeteve">Seçtiğiniz kategori:</string>
-    <string name="ajetikuranor">Kur\'anda</string>
-    <string name="ajetithot">şöyle buyurur:</string>
-    <string name="pershkrimiajetit">Ayetin devamı için buraya tıklayın</string>
-    <string name="ekzistojne">Bu kategoride </string>
-    <string name="numriiajeteve"> ayet bulunmaktadır</string>
-    <string name="neemer">Rahman ve Rahim Olan Allah\'ın Adıyla</string>
-    <string name="quit">Çıkış</string>
-    <string name="really_quit">Çıkmak istediğinizden eminmisiniz?</string>
-    <string name="yes">Evet</string>
-    <string name="no">Hayır</string>
-    <string name="wait">Lütfen bekleyin&#8230;</string>
-    <string name="lexokuranin_latin">Latin harfleri ile Kur\'an oku</string>
-    <string name="neemertransliteration">Bismillahirrahmanirrahîm</string>
-    <string name="nextpage">Bir sonraki sayfa</string>
-    <string name="prevpage">Bir önceki sayfa</string>
-    <string name="swipeprev">Bir önceki sayfaya gitmek için ekranı sağa doğru kaydırın</string>
-    <string name="swipenext">Bir sonraki sayfaya gitmek için ekranı sola doğru kaydırın</string>
-    <string name="nomorenext">Daha fazla sayfa yok</string>
-    <string name="nomoreprev">Başka geri sayfa yok</string>
-    <string name="ok">Në rregull</string>
-    <string name="instructions">Talimatlar</string> 
-	<string name="app_descrip2">Bu uygulamanın amacı, Kur\'an\'ı anlamada ilgilenen insanlara yardım etmek,Kur\'anda kurallar ve hayatın hakkında geçen ayetlerin  açıklaması ve yorumlası.\n\nHer alanda birden fazla sayfa olabilir,bu yüzden lütfen parmağınızı kaydırarak kontrol ediniz.\n\nKullanım\nAna menüde 4 düğme var: kategoriler, arama, Türkçe dilinde Kur\'an okuma, latin kelimelerle Arapça dilinde Kur\'an okuma.\n\nKategoriler:\nBu sayfada Kur\'anda bahsedilen bir dizi konu göstermekteyiz. Ilginizi çeken konuya tıkladıktan sonra bu konu hakkında konuşan tüm ayetlerle yeni bir sayfa açılacaktır. Sayfaları değiştirmek için parmağınızı istediğiniz tarafa kaydırın.\n\nArama:\nBu sayfada bir metin alanı vardır oraya ilgilendiğiniz konunun harflerini yazmak için, sonra uygulama size arama ölçütleriyle eşleşen konuları gösterecektir. Ilgilenizi çeken konuya tıkladıktan sonra bu konu hakkında konuşan tüm ayetlerle yeni bir sayfa açılacaktır. Sayfaları değiştirmek için parmağınızı istediğiniz tarafa kaydırın.\n\nTürkçe dilinde Kur\'an okuma:\nBu sayfa Kur\'an okumak içindir, ilk önce sureyi seçmelisiniz, sonra istediğiniz ayeti seçmelisiniz, uygulama kendiliğinden o ayeti seçer.Sayfaları değiştirmek için parmağınızı istediğiniz tarafa kaydırın.\n\nLatin kelimelerle Arapça dilinde Kur\'an okuma:\nBu sayfa Kur\'an okumak içindir, ilk önce sureyi seçmelisiniz, sonra istediğiniz ayeti seçmelisiniz, uygulama kendiliğinden o ayeti seçer.Sayfaları değiştirmek için parmağınızı istediğiniz tarafa kaydırın.</string>
-    <string name="about">Hakkında</string>
-    <string name="lexokuranin_arabisht">Arapça Kur\'an oku</string>
-    <string name="font_size">Yazilarin buyuklugu</string>
+    <string name="app_name">Kur\'anda ara</string>
 
+    <string name="welcome_text">Hoşgeldiniz, şu anda Kur\'andan %d konularımız var.</string>
+    <string name="random_topic_text">Size rastgele bir konu önerebilir miyiz? %s hakkında okumak istiyorsanız lütfen buraya tıklayın</string>
+    <string name="write_topic_search">Aramak için kelime yazın:</string>
+    <string name="in_this_topic_exists">Bu konuda</string>
+    <string name="ayahs">ayet bulunmaktadır.</string>
+    <string name="quranic_verse">"Kur\'anda"</string>
+    <string name="says">şöyle buyurur:</string>
+    <string name="select_language">Dil seç</string>
+    <string name="select_surah">Sure seç</string>
+    <string name="select_ayah">Ayet seç</string>
+    <string name="in_the_name">"Rahman ve Rahim Olan Allah'ın Adıyla"</string>
+    <string name="in_the_name_transliteration">Bismillahirrahmanirrahîm</string>
+    <string name="in_the_name_arabic">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</string>
+    <string name="font_size">Yazıların büyüklüğü</string>
+    <string name="language">Dil</string>
+    <string name="report_bug">Hataları bildirin</string>
+    <string name="suggest_features">Özellik öner</string>
+    <string name="about_us">Hakkımızda</string>
+    <string name="developers">Uygulama geliştiricileri:
+        Ibrahim Vasija
+        Ardian Ahmeti</string>
+    <string name="db_info">"Bütün tercümeler
+        "<a href="http://qurandatabase.org/">http://qurandatabase.org</a>"
+         web sitesinden alınmıştır
+        Herhangi bir hata varsa özür dileriz."</string>
+    <string name="translator_en">"Ingilizceye tercüme eden:
+        Muhammad Habib Shakir"</string>
+    <string name="translator_de">"Almancaya tercüme eden:
+        Adel Theodor Khoury"</string>
+    <string name="translator_sq">"Arnavutçaya tercüme eden:
+        Hasan Nahi"</string>
+    <string name="translator_tr">"Türkçeye tercüme eden:
+        Abdulbaki Gölpınarlı"</string>
+    <string name="save">Koru</string>
+    <string name="cancel">İptal</string>
+    <string name="settings">Ayarlar</string>
+    <string name="special_thanks">"Özel teşekkürler:
+    Labinot Gashi Almanca çeviri için."</string>
+    <string name="next_page">Sonraki sayfa</string>
+    <string name="previous_page">Önceki sayfa</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

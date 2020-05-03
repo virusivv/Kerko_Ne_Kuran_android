@@ -1,78 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Kërko në Kur\'an</string>
-    <string name="kategorite_butoni">Kategoritë</string>
-    <string name="lexo_kuranin">Lexo Kur\'anin</string>
-    <string name="kthehu_butoni">Kthehu</string>
-    <string name="vazhdo_butoni">Vazhdo</string>
-    <string name="app_name_translated">Kërko në Kur\'an</string>
-    <string name="settings_butoni">Preferencat</string>
-    <string name="app_credits" translatable="false">Ibrahim Vasija</string>
-    <string name="about">Rreth aplikacionit</string>
-    <string name="version" translatable="false">16</string>
-    <string name="app_credit">Krijuesi i aplikacionit:\\nIbrahim Vasija\\n\\nDistributor i aplikacionit:</string>
-    <string name="perk_shqip">Përkthyesi në gjuhën Shqipe:\nHasan Nahi</string>
-    <string name="perk_ang">Përkthyesi në gjuhën Angleze:\nMuhammad Habib Shakir</string>
-    <string name="perk_tr">Përkthyesi në gjuhën Turke:\nAbdulbaki Gölpınarlı</string>
-    <string name="perk_de">Përkthyesi në gjuhën Gjermane:\nAdel Theodor Khoury</string>
-    <string name="originofdb">Të gjitha të dhënat e përkthimeve janë nga faqja \n<a href="http://qurandatabase.org/">
-        http://qurandatabase.org</a>\nJu kërkojmë falje nëse ekziston ndonjë gabim.
-    </string>
-    <string name="zgjedhsuren_shqip">Zgjedh suren</string>
-    <string name="kerkodetalisht">Shkruaj fjalën për të kërkuar:</string>
-    <string name="zgjedhajetin">Zgjedh ajetin</string>
-    <string name="listaajeteve">Kategoria e zgjedhur:</string>
-    <string name="ajetikuranor">Ajeti Kur\'anor</string>
-    <string name="ajetithot">thot:</string>
-    <string name="pershkrimiajetit">Kliko këtu për vazhdimin e ajetit</string>
-    <string name="ekzistojne">Në këtë kategori ekzistojnë</string>
-    <string name="numriiajeteve">ajete</string>
-    <string name="neemer">Në emër të All-llah\'ut të Gjithëmëshirshmit dhe Mëshirëplotit</string>
-    <string name="quit">Dalje</string>
-    <string name="really_quit">Jeni të sigurt që dëshironi të dilni?</string>
-    <string name="yes">Po</string>
-    <string name="no">Jo</string>
-    <string name="wait">Ju lutem prisni&#8230;</string>
-    <string name="lexokuranin_latin">Lexo Kur\'anin me shkronja latine</string>
-    <string name="neemertransliteration">Bismillahi-r rahmani-r rahim</string>
-    <string name="nextpage">Faqja e ardhshme</string>
-    <string name="prevpage">Faqja e kaluar</string>
-    <string name="swipeprev">Rrëshqit gishtin në të djathtë për faqen e kaluar</string>
-    <string name="swipenext">Rrëshqit gishtin në të majtë për faqen e ardhshme</string>
-    <string name="nomorenext">Nuk ka më faqe të ardhshme</string>
-    <string name="nomoreprev">Nuk ka më faqe të kaluar</string>
-    <string name="ok">Në rregull</string>
-    <string name="instructions">Instruksionet</string>
-    <string name="app_descrip2">Ky aplikacion është krijuar me qëllim për t\'ua lehtësuar të gjithë të interesuarve
-        kuptimin dhe mësimin e Kur\'anit, shpjegimin dhe interpretimin e rregullave, sureve dhe temave të ndryshme rreth
-        jetës në Kur\'an.\n\nÇdo dritare mund të ketë më tepër se një faqe, ju lutem ndërroni faqet duke rrëshqitur
-        gishtin tuaj.\n\nPërdorimi\nNë menynë kryesore janë 4 butona: kategoritë, kërkimi i kategorive, leximi i
-        Kur\'anit në gjuhën Shqipe si dhe leximi i Kur\'anit në gjuhen Arabe me shkronja Latine.\n\nKategoritë:\nTe
-        kategoritë kemi një sërë temash për të cilat flet Kur\'ani, pasi të klikoni në temën e cila ju intereson hapet
-        faqja me ajetet ku flitet për temën që ju intereson. Pasi të zgjedhni ajetin e dëshiruar shfaqet ajeti i plotë.
-        Për të ndryshuar faqet rrëshqitni gishtin në anën e dëshiruar.\n\nKërko:\nNë faqen për kërkim ekziston hapësira
-        ku duhet të shënoni kategorinë e kërkuar, pasi të shkruani shkronjat atëhere aplikacioni i gjen të gjitha
-        kategoritë që i përmbajnë ato shkronja; pasi të klikoni në temën e cila ju intereson hapet faqja me ajetet ku
-        flitet për temën që ju intereson. Pasi të zgjedhni ajetin e dëshiruar shfaqet ajeti i plotë. Për të ndryshuar
-        faqet rrëshqitni gishtin në anën e dëshiruar.\n\nLeximi i Kur\'anit në gjuhën Shqipe:\nNë faqen e leximit të
-        Kur\'an\'it keni mundësinë të zgjedhni suren e dëshiruar, pasi të zgjedhni suren keni mundësinë të zgjedhni edhe
-        ajetin e dëshiruar dhe aplikacioni do të fokusohet në ajetin e zgjedhur. Për të ndryshuar faqet rrëshqitni
-        gishtin në anën e dëshiruar.\n\nLeximi i Kur\'anit në gjuhën Arabe me shkronja Latine:\nNë faqen e leximit të
-        Kur\'an\'it keni mundësinë të zgjedhni suren e dëshiruar, pasi të zgjedhni suren keni mundësinë të zgjedhni edhe
-        ajetin e dëshiruar dhe aplikacioni do të fokusohet në ajetin e zgjedhur. Për të ndryshuar faqet rrëshqitni
-        gishtin në anën e dëshiruar.
-    </string>
-    <string name="lexokuranin_arabisht">Lexo Kur\'anin Arabisht</string>
-    <string name="font_size">Madhesia e tekstit</string>
 
-
-    <string name="title_activity_splash" translatable="false">SplashActivity</string>
-    <string name="dummy_button" translatable="false">Dummy Button</string>
-    <string name="dummy_content" translatable="false">DUMMY\nCONTENT</string>
-    <string name="title_activity_main2" translatable="false">Main2Activity</string>
-    <string name="title_home" translatable="false">Home</string>
-    <string name="title_dashboard" translatable="false">Dashboard</string>
-    <string name="title_notifications" translatable="false">Notifications</string>
-
-
+    <string name="welcome_text">Mirë se vini, për momentin ekzistojnë %d Tema nga Kur\'ani.</string>
+    <string name="random_topic_text">A mund të ju propozojmë ndonjë temë? Ju lutem shtypni këtu nëse dëshironi të lexoni për: %s</string>
+    <string name="write_topic_search">Shkruaj fjalën për të kërkuar:</string>
+    <string name="in_this_topic_exists">Në këtë temë ekzistojnë</string>
+    <string name="ayahs">ajete.</string>
+    <string name="quranic_verse">"Ajeti Kur\'anor"</string>
+    <string name="says">thot:</string>
+    <string name="select_language">Zgjedh gjuhën</string>
+    <string name="select_surah">Zgjedh suren</string>
+    <string name="select_ayah">Zgjedh ajetin</string>
+    <string name="in_the_name">"Në emër të All-llah'ut të Gjithëmëshirshmit dhe Mëshirëplotit"</string>
+    <string name="in_the_name_transliteration">Bismillahi-r rahmani-r rahim</string>
+    <string name="in_the_name_arabic">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</string>
+    <string name="font_size">Madhësia e shkronjave</string>
+    <string name="language">Gjuha</string>
+    <string name="report_bug">Raporto gabimet</string>
+    <string name="suggest_features">Sugjeroni ide</string>
+    <string name="about_us">Rreth nesh</string>
+    <string name="developers">Zhvilluesit e aplikacionit:
+        Ibrahim Vasija
+        Ardian Ahmeti</string>
+    <string name="db_info">"Të gjitha të dhënat e përkthimeve janë nga faqja
+        "<a href="http://qurandatabase.org/">http://qurandatabase.org</a>"
+        Ju kërkojmë falje nëse ekziston ndonjë gabim."</string>
+    <string name="translator_en">"Përkthyesi në gjuhën Angleze:
+        Muhammad Habib Shakir"</string>
+    <string name="translator_de">"Përkthyesi në gjuhën Gjermane:
+        Adel Theodor Khoury"</string>
+    <string name="translator_sq">"Përkthyesi në gjuhën Shqipe:
+        Hasan Nahi"</string>
+    <string name="translator_tr">"Përkthyesi në gjuhën Turke:
+        Abdulbaki Gölpınarlı"</string>
+    <string name="save">Ruaj</string>
+    <string name="cancel">Anulo</string>
+    <string name="settings">Preferencat</string>
+    <string name="special_thanks">"Falenderim të veçantë:
+Labinot Gashi për përkthimin në gjuhën Gjermane."</string>
+    <string name="next_page">Faqja e ardhshme</string>
+    <string name="previous_page">Faqja e kaluar</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

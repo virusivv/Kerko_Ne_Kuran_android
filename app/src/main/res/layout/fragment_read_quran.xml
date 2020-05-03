@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
-        android:text="Choose language"
+        android:text="@string/select_language"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separator" />
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="15sp"
-        android:text="Choose surah"
+        android:text="@string/select_surah"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSelectLanguage" />
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/spinnerAyah"
         android:layout_marginTop="15dp"
-        android:text="Choose ayah"
+        android:text="@string/select_ayah"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/tvSelectSurah"
         app:layout_constraintTop_toBottomOf="@id/tvSelectSurah" />
@@ -119,7 +119,7 @@
                 android:layout_height="70dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="@string/neemer"
+                android:text="@string/in_the_name"
                 android:textColor="@color/black"
                 android:textSize="16sp"/>
 
@@ -148,7 +148,7 @@
                     android:textColor="@color/white"
                     android:padding="10dp"
                     android:visibility="invisible"
-                    android:text="@string/prevpage"/>
+                    android:text="@string/previous_page"/>
                 <Button
                     android:id="@+id/btnNext"
                     android:layout_width="wrap_content"
@@ -158,7 +158,7 @@
                     android:padding="10dp"
                     android:textColor="@color/white"
                     android:visibility="invisible"
-                    android:text="@string/nextpage"/>
+                    android:text="@string/next_page"/>
             </RelativeLayout>
 
             <ImageView

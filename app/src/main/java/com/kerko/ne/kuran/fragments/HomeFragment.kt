@@ -44,11 +44,9 @@ class HomeFragment : MvpFragment<HomeView, HomePresenter>(), HomeView {
 
     fun writeCategoriesNumber() {
         randomCategoryAndCount = presenter.getRandomCategoryAndCount()
-        tvSample.text =
-            "Welcome, there are total ${randomCategoryAndCount.count} categories in this version."
+        tvSample.text = getString(R.string.welcome_text).format(randomCategoryAndCount.count)
 
-        tvLinkToCategory.text = Html.fromHtml("You may be interested to read about ${randomCategoryAndCount.category}, <a>if yes please click here.</a>");
-
+        tvLinkToCategory.text = getString(R.string.random_topic_text).format(randomCategoryAndCount.category)
     }
 
     fun myOnKeyDown(key_code: Int) {

@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.KeyEvent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.ViewPager
-import com.hannesdorfmann.mosby.mvp.MvpFragment
 import com.kerko.ne.kuran.GeneralFunctions
 import com.kerko.ne.kuran.R
 import com.kerko.ne.kuran.adapters.MainPagerAdapter
@@ -94,5 +94,9 @@ class MainActivity : AppCompatActivity() {
         mainViewPager.currentItem = 1
         selectItem(1)
         (fragmentList[1] as SearchFragment).clickedCategory(categoryId, categoryText)
+    }
+
+    public fun updateQuranLanguages(){
+        (fragmentList[2] as ReadQuranFragment).checkNewLanguage()
     }
 }

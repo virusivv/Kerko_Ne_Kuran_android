@@ -23,7 +23,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/bismillah" />
+            android:src="@drawable/bismillah"
+            android:adjustViewBounds="true"
+            android:tint="@color/blueMiddle"
+            />
 
         <TextView
             android:id="@+id/tvAyah"
@@ -31,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/ajetikuranor"
+            android:text="@string/quranic_verse"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textIsSelectable="true"
