@@ -37,7 +37,7 @@
         <com.kerko.ne.kuran.views.SettingsItem
             android:id="@+id/siFontSize"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginTop="5dp"
             app:settingIcon="@drawable/ic_font_size"
             app:settingTitle="@string/font_size"
@@ -46,7 +46,7 @@
         <com.kerko.ne.kuran.views.SettingsItem
             android:id="@+id/siLanguage"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginTop="5dp"
             app:settingIcon="@drawable/ic_language"
             app:settingInfo="@string/language"
@@ -66,7 +66,7 @@
         <com.kerko.ne.kuran.views.SettingsItem
             android:id="@+id/siReportABug"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginTop="5dp"
             app:settingIcon="@drawable/ic_bug_report"
             app:settingTitle="@string/report_a_bug"/>
@@ -74,7 +74,7 @@
         <com.kerko.ne.kuran.views.SettingsItem
             android:id="@+id/siSuggestions"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginTop="5dp"
             app:settingIcon="@drawable/ic_new"
             app:settingTitle="@string/suggest_features" />
@@ -85,7 +85,7 @@
     <com.kerko.ne.kuran.views.SettingsItem
         android:id="@+id/siAboutUs"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="55dp"
         android:layout_margin="10dp"
         app:settingIcon="@drawable/ic_info"
         app:settingTitle="@string/about"

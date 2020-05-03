@@ -10,7 +10,7 @@ object Constants {
     const val APP_FIRST_TIME = "quran-first-time"
 
     const val FONT_PREF = "font-size"
-    const val DEFAULT_FONT_SIZE = 16
+    const val DEFAULT_FONT_SCALE = 1f
 
     const val LANGUAGE_PREF = "lang"
     const val DEFAULT_LANGUAGE = "sq"

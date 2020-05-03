@@ -141,22 +141,6 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
         }
     }
 
-    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
-        super.setUserVisibleHint(isVisibleToUser)
-//        if (isVisibleToUser) {
-//
-//            ayahsText = ""
-//            languagesList= ArrayList<String>()
-//            totalPages = 1
-//            currentPage = 1
-//            ayahId = 0
-//            selectedAyahId = 0
-//            quranListObject = ArrayList<QuranModel>()
-//
-//
-//        }
-    }
-
     fun initSpinnerQuranLanguages() {
         context?.let {
             languagesList = QuranLanguagesEnum.toStringList();

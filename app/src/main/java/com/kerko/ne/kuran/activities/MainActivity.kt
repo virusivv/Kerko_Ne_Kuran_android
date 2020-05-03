@@ -1,11 +1,11 @@
 package com.kerko.ne.kuran.activities
 
+import android.content.Context
 import android.os.Bundle
 import android.view.KeyEvent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
-import com.hannesdorfmann.mosby.mvp.MvpFragment
 import com.kerko.ne.kuran.GeneralFunctions
 import com.kerko.ne.kuran.QuranApplication
 import com.kerko.ne.kuran.R
@@ -38,6 +38,16 @@ class MainActivity : AppCompatActivity() {
         setupClickListeners()
         initFragments()
 
+        if (QuranApplication.instance.isAppRunningForTheFirstTime()) {
+            //Show a guid how to use app
+
+            QuranApplication.instance.setAppRunningFirstTime()
+        }
+
+    }
+
+    override fun attachBaseContext(ctx: Context) {
+        super.attachBaseContext(QuranApplication.instance.baseContext(ctx))
     }
 
     private fun initFragments() {

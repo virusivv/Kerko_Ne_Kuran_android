@@ -23,14 +23,35 @@ class FontSizeDialog(context: Context, var fontChangedListener: FontChangedListe
     private fun updateFontSize() {
         val fontSize = QuranApplication.instance.getFontSize()
         tvFontSize.text = "Font size $fontSize"
-        sbFontSize.progress = fontSize
+        sbFontSize.progress = when(fontSize) {
+            1.0f -> 1
+            1.1f -> 2
+            1.2f -> 3
+            1.3f -> 4
+            1.4f -> 5
+            1.5f -> 6
+            else -> 7
+        }
+    }
+
+    fun intToF(int: Int): Float {
+        return when(int) {
+            1 -> 1.0f
+            2 -> 1.1f
+            3 -> 1.2f
+            4 -> 1.3f
+            5 -> 1.4f
+            6 -> 1.5f
+            else -> 1.6f
+        }
     }
 
     private fun setupListeners() {
         sbFontSize.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                tvFontSize.text = "Font size $progress"
-                tvFontSize.textSize = progress.toFloat()
+                tvFontSize.text = "Font scale ${intToF(progress)}"
+                tvFontSize.textScaleX = intToF(progress)
+//                tvFontSize.textSize = progress.toFloat()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -42,7 +63,7 @@ class FontSizeDialog(context: Context, var fontChangedListener: FontChangedListe
         })
 
         btnSave.setOnClickListener {
-            QuranApplication.instance.setFontSize(sbFontSize.progress)
+            QuranApplication.instance.setFontScale(intToF(sbFontSize.progress))
             fontChangedListener.onFontChanged()
             dismiss()
         }

@@ -3,7 +3,6 @@ package com.kerko.ne.kuran.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.kerko.ne.kuran.QuranApplication
 import com.kerko.ne.kuran.R
 import com.kerko.ne.kuran.helpers.DataBaseHelper
 import rx.Observable

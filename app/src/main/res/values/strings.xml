@@ -73,11 +73,11 @@
     <string name="title_home" translatable="false">Home</string>
     <string name="title_dashboard" translatable="false">Dashboard</string>
     <string name="title_notifications" translatable="false">Notifications</string>
-    <string name="home">Home</string>
-    <string name="settings">Settings</string>
-    <string name="language">Language</string>
-    <string name="report_a_bug">Report a bug</string>
-    <string name="suggest_features">Suggest features</string>
+    <string name="home">Home general</string>
+    <string name="settings">Settings general</string>
+    <string name="language">Language general</string>
+    <string name="report_a_bug">Report a bug general</string>
+    <string name="suggest_features">Suggest features general</string>
 
 
 </resources>

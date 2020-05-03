@@ -1,5 +1,6 @@
 package com.kerko.ne.kuran.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,7 +20,6 @@ import kotlinx.android.synthetic.main.fragment_settings.*
  * Created by Ardian Ahmeti on 04/25/2020
  **/
 class SettingsFragment : MvpFragment<SettingsView, SettingsPresenter>(), SettingsView, LanguageChangeListener, FontChangedListener {
-
     val TAG = "SettingsFragment"
 
     override fun createPresenter() = SettingsPresenter()
@@ -35,6 +35,10 @@ class SettingsFragment : MvpFragment<SettingsView, SettingsPresenter>(), Setting
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupClickListeners()
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(QuranApplication.instance.baseContext(context))
     }
 
     override fun onResume() {
@@ -56,6 +60,10 @@ class SettingsFragment : MvpFragment<SettingsView, SettingsPresenter>(), Setting
         }
     }
 
+    override fun onLanguageChanged() {
+        updateLanguage()
+    }
+
     private fun updateLanguage() {
         siLanguage.setInfoText(QuranApplication.instance.getLanguage()?.canonicalForm())
     }
@@ -63,19 +71,9 @@ class SettingsFragment : MvpFragment<SettingsView, SettingsPresenter>(), Setting
     private fun updateFontSize() {
         val font = QuranApplication.instance.getFontSize()
         siFontSize.setInfoText(font.toString())
-
-    }
-
-
-    override fun onLanguageChanged() {
-        updateLanguage()
     }
 
     override fun onFontChanged() {
         updateFontSize()
-    }
-
-    fun myOnKeyDown(key_code: Int) {
-        //do whatever you want here
     }
 }
