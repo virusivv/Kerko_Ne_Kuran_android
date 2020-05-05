@@ -1,5 +1,6 @@
 package com.kerko.ne.kuran.activities
 
+import android.content.Context
 import android.os.Bundle
 import android.view.KeyEvent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.ViewPager
 import com.kerko.ne.kuran.GeneralFunctions
+import com.kerko.ne.kuran.QuranApplication
 import com.kerko.ne.kuran.R
 import com.kerko.ne.kuran.adapters.MainPagerAdapter
 import com.kerko.ne.kuran.fragments.HomeFragment
@@ -37,7 +39,16 @@ class MainActivity : AppCompatActivity() {
         setupClickListeners()
         initFragments()
 
+        if (QuranApplication.instance.isAppRunningForTheFirstTime()) {
+            //Show a guid how to use app
 
+            QuranApplication.instance.setAppRunningFirstTime()
+        }
+
+    }
+
+    override fun attachBaseContext(ctx: Context) {
+        super.attachBaseContext(QuranApplication.instance.baseContext(ctx))
     }
 
     private fun initFragments() {
@@ -97,6 +108,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     public fun updateQuranLanguages(){
-        (fragmentList[2] as ReadQuranFragment).checkNewLanguage()
+        //(fragmentList[2] as ReadQuranFragment).checkNewLanguage()
+        recreate()
     }
 }

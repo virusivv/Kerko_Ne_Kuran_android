@@ -97,7 +97,14 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
                 QuranLanguagesEnum.fromTitle(spinnerReadLanguage.selectedItem.toString())?.let {
                     QuranApplication.instance.setQuranLanguage(it)
                 }
+                if(position==0)
+                    tvBismillahReadQuran.text=getString(R.string.in_the_name)
+                else if(position==1)
+                    tvBismillahReadQuran.text=getString(R.string.in_the_name_transliteration)
+                else if(position==2)
+                    tvBismillahReadQuran.text=getString(R.string.in_the_name_arabic)
                 initSpinnerAyahList()
+
             }
         }
 
@@ -142,10 +149,17 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
     }
 
     public fun checkNewLanguage(){
-        val newLangList = QuranLanguagesEnum.toStringList()
-        if (newLangList[0] != languagesList[0]) {
-            languagesList = newLangList
-            initSpinnerQuranLanguages()
+        try {
+            val newLangList = QuranLanguagesEnum.toStringList()
+            if(newLangList.isNotEmpty()) {
+                if (languagesList.isEmpty() || newLangList[0] != languagesList[0]) {
+                    languagesList = newLangList
+                    initSpinnerQuranLanguages()
+                }
+            }
+        }
+        catch (exception:java.lang.Exception){
+            exception.printStackTrace()
         }
     }
 
@@ -153,7 +167,7 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
         if (isVisibleToUser) {
-            checkNewLanguage()
+            //checkNewLanguage()
 //
 //            ayahsText = ""
 //            languagesList= ArrayList<String>()

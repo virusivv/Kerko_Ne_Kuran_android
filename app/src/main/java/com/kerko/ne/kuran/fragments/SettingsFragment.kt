@@ -72,7 +72,6 @@ class SettingsFragment : MvpFragment<SettingsView, SettingsPresenter>(), Setting
 
 
     override fun onLanguageChanged() {
-        updateLanguage()
 
         val locale = Locale(QuranApplication.instance.getLanguage()?.identificator)
         Locale.setDefault(locale)
@@ -82,6 +81,7 @@ class SettingsFragment : MvpFragment<SettingsView, SettingsPresenter>(), Setting
             config,
             this.resources.displayMetrics
         )
+        updateLanguage()
 
         (activity as MainActivity?)?.updateQuranLanguages()
     }

@@ -25,10 +25,10 @@
         app:layout_constraintTop_toBottomOf="@id/tvFontSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:min="16"
-        android:max="26"
+        android:min="1"
+        android:max="7"
         android:layout_marginTop="10dp"
-        android:thumbTint="@color/orange"/>
+        android:thumbTint="@color/colorPrimaryDark"/>
 
 
     <LinearLayout
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:backgroundTint="@color/orange"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:text="@string/cancel"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
