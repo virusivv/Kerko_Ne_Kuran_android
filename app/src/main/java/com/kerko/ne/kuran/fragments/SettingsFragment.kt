@@ -10,10 +10,7 @@ import com.hannesdorfmann.mosby.mvp.MvpFragment
 import com.kerko.ne.kuran.QuranApplication
 import com.kerko.ne.kuran.R
 import com.kerko.ne.kuran.activities.MainActivity
-import com.kerko.ne.kuran.dialogs.FontChangedListener
-import com.kerko.ne.kuran.dialogs.FontSizeDialog
-import com.kerko.ne.kuran.dialogs.LanguageChangeListener
-import com.kerko.ne.kuran.dialogs.LanguageDialog
+import com.kerko.ne.kuran.dialogs.*
 import com.kerko.ne.kuran.presenters.SettingsPresenter
 import com.kerko.ne.kuran.views.SettingsView
 import kotlinx.android.synthetic.main.fragment_settings.*
@@ -56,6 +53,11 @@ class SettingsFragment : MvpFragment<SettingsView, SettingsPresenter>(), Setting
         siFontSize.setOnClickListener {
             context?.let {
                 FontSizeDialog(it, this)
+            }
+        }
+        siAboutUs.setOnClickListener {
+            context?.let {
+                AboutUsDialog(it)
             }
         }
     }

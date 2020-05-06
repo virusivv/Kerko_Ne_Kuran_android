@@ -44,6 +44,10 @@ Labinot Gashi Übersetzung ins Deutsche."</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-
-
+    <string name="creator_distributor">Applikationsentwicklern:\nIbrahim Vasija\nArdian Ahmeti\nAnwendungsverteiler:\n</string>
+    <string name="aptdev_url"><a href="https://play.google.com/store/apps/developer?id=AptDev">AptDev</a></string>
+    <string name="app_description">"Der Zweck dieser App ist es, Leuten zu helfen die darin interessiert sind den Qur'an zu verstehen, Regeln zu erklären und interpretieren, sowie Suren und Themen übers Leben aus dem Qur'an zu vermitteln."</string>
+    <string name="database_origin">Alle übersetzten Inhalte sind Eigentum von:
+    <a href="http://qurandatabase.org/">http://qurandatabase.org</a>"
+     Wir entschuldigen uns für mögliche Fehler.</string>
 </resources>

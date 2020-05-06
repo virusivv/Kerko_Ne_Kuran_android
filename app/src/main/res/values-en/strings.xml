@@ -44,4 +44,10 @@ Labinot Gashi for translation into German."</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="creator_distributor">Application developers:\nIbrahim Vasija\nArdian Ahmeti\nApplication distributor:\n</string>
+    <string name="aptdev_url"><a href="https://play.google.com/store/apps/developer?id=AptDev">AptDev</a></string>
+    <string name="app_description">"The purpose of this application is to help people who are interested in understanding Qur'an, explanations and interpretations of rules, surahs and topics about life in Qur'an."</string>
+    <string name="database_origin">All translated data are from website
+        "<a href="http://qurandatabase.org/">http://qurandatabase.org</a>"
+        We apologize if there are any errors.</string>
 </resources>

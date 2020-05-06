@@ -39,10 +39,18 @@
     <string name="cancel">İptal</string>
     <string name="settings">Ayarlar</string>
     <string name="special_thanks">"Özel teşekkürler:
-    Labinot Gashi Almanca çeviri için."</string>
+        Labinot Gashi Almanca çeviri için."</string>
     <string name="next_page">Sonraki sayfa</string>
     <string name="previous_page">Önceki sayfa</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="creator_distributor">Uygulama geliştiricileri:\nIbrahim Vasija\nArdian Ahmeti\nUygulma dağıtıcısı:\n</string>
+    <string name="aptdev_url"><a href="https://play.google.com/store/apps/developer?id=AptDev">AptDev</a></string>
+    <string name="app_description">"Bu uygulamanın amacı, Kur'an'ı anlamada ilgilenen insanlara yardım etmek,Kur'anda kurallar ve hayatın hakkında geçen ayetlerin açıklaması ve yorumları."</string>
+    <string name="database_origin">Bütün tercümeler
+        "<a href="http://qurandatabase.org/">http://qurandatabase.org</a>"
+         web sitesinden alınmıştır
+        Herhangi bir hata varsa özür dileriz.
+    </string>
 </resources>

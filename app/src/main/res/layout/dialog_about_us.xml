@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20.0dip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20.0dip">
+
+            <TextView
+                android:id="@+id/tvCreatorDistributor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:gravity="center"
+                android:text="@string/creator_distributor"
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:id="@+id/tvAptDevURL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvCreatorDistributor"
+                android:autoLink="web"
+                android:gravity="center"
+                android:text="@string/aptdev_url"
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:id="@+id/tvDatabaseOrigin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAptDevURL"
+                android:autoLink="web"
+                android:linksClickable="true"
+                android:text="@string/database_origin"
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:id="@+id/tvTranslators"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDatabaseOrigin"
+                android:autoLink="web"
+                android:text=""
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:id="@+id/tvSpecialThanks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTranslators"
+                android:autoLink="web"
+                android:text="@string/special_thanks"
+                android:textSize="16.0sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
