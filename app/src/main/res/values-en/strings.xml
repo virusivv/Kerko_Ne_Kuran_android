@@ -28,14 +28,7 @@
     <string name="db_info">"All translated data are from website
         "<a href="http://qurandatabase.org/">http://qurandatabase.org</a>"
         We apologize if there are any errors."</string>
-    <string name="translator_en">"Translated into English from:
-        Muhammad Habib Shakir"</string>
-    <string name="translator_de">"Translated into German from:
-        Adel Theodor Khoury"</string>
-    <string name="translator_sq">"Translated into Albanian from:
-        Hasan Nahi"</string>
-    <string name="translator_tr">"Translated into Turkish from:
-        Abdulbaki Gölpınarlı"</string>
+    <string name="translators">"Translated into Albanian from:\nHasan Nahi\nTranslated into English from:\nMuhammad Habib Shakir\nTranslated into Turkish from:\nAbdulbaki Gölpınarlı\nTranslated into German from:\nAdel Theodor Khoury"</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="settings">Settings</string>

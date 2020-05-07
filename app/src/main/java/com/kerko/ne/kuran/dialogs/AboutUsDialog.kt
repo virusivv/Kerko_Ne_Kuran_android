@@ -18,20 +18,8 @@ class AboutUsDialog(context: Context) : Dialog(context) {
 
     init {
         setContentView(R.layout.dialog_about_us)
-        updateSettingViews()
         setupListeners()
         show()
-    }
-
-    private fun updateSettingViews() {
-
-        tvTranslators.text = "%s\n%s\n%s\n%s".format(
-            context.resources.getString(R.string.translator_sq),
-            context.resources.getString(R.string.translator_en),
-            context.resources.getString(R.string.translator_tr),
-            context.resources.getString(R.string.translator_de)
-        )
-
     }
 
     private fun setupListeners() {

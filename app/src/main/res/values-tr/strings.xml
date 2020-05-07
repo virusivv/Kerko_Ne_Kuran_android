@@ -27,14 +27,7 @@
         "<a href="http://qurandatabase.org/">http://qurandatabase.org</a>"
          web sitesinden alınmıştır
         Herhangi bir hata varsa özür dileriz."</string>
-    <string name="translator_en">"Ingilizceye tercüme eden:
-        Muhammad Habib Shakir"</string>
-    <string name="translator_de">"Almancaya tercüme eden:
-        Adel Theodor Khoury"</string>
-    <string name="translator_sq">"Arnavutçaya tercüme eden:
-        Hasan Nahi"</string>
-    <string name="translator_tr">"Türkçeye tercüme eden:
-        Abdulbaki Gölpınarlı"</string>
+    <string name="translators">"Arnavutçaya tercüme eden:\nHasan Nahi\nIngilizceye tercüme eden:\nMuhammad Habib Shakir\nTürkçeye tercüme eden:\nAbdulbaki Gölpınarlı\nAlmancaya tercüme eden:\nAdel Theodor Khoury"</string>
     <string name="save">Koru</string>
     <string name="cancel">İptal</string>
     <string name="settings">Ayarlar</string>

@@ -26,14 +26,7 @@
     <string name="db_info">"Alle übersetzten Inhalte sind Eigentum von:
 "<a href="http://qurandatabase.org/">http://qurandatabase.org</a>"
  Wir entschuldigen uns für mögliche Fehler."</string>
-    <string name="translator_en">"Übersetzung ins Englische:
-        Muhammad Habib Shakir"</string>
-    <string name="translator_de">"Übersetzung ins Deutsch:
-        Adel Theodor Khoury"</string>
-    <string name="translator_sq">"Übersetzung ins Albanische:
-        Hasan Nahi"</string>
-    <string name="translator_tr">"Übersetzung ins Türkische:
-        Abdulbaki Gölpınarlı"</string>
+    <string name="translators">"Übersetzung ins Albanische:\nHasan Nahi\nÜbersetzung ins Englische:\nMuhammad Habib Shakir\nÜbersetzung ins Türkische:\nAbdulbaki Gölpınarlı\nÜbersetzung ins Deutsch:\nAdel Theodor Khoury"</string>
     <string name="save">Speichern</string>
     <string name="cancel">Stornieren</string>
     <string name="settings">Einstellungen</string>

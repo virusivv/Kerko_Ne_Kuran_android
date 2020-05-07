@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvDatabaseOrigin"
                 android:autoLink="web"
-                android:text=""
+                android:text="@string/translators"
                 android:textSize="16.0sp" />
 
             <TextView

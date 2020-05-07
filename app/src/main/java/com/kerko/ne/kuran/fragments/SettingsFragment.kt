@@ -55,6 +55,16 @@ class SettingsFragment : MvpFragment<SettingsView, SettingsPresenter>(), Setting
                 FontSizeDialog(it, this)
             }
         }
+        siReportABug.setOnClickListener {
+            context?.let {
+                ReportBugDialog(it)
+            }
+        }
+        siSuggestions.setOnClickListener {
+            context?.let {
+                SuggestFeatureDialog(it)
+            }
+        }
         siAboutUs.setOnClickListener {
             context?.let {
                 AboutUsDialog(it)

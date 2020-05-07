@@ -26,14 +26,7 @@
     <string name="db_info">"Të gjitha të dhënat e përkthimeve janë nga faqja
         "<a href="http://qurandatabase.org/">http://qurandatabase.org</a>"
         Ju kërkojmë falje nëse ekziston ndonjë gabim."</string>
-    <string name="translator_en">"Përkthyesi në gjuhën Angleze:
-        Muhammad Habib Shakir"</string>
-    <string name="translator_de">"Përkthyesi në gjuhën Gjermane:
-        Adel Theodor Khoury"</string>
-    <string name="translator_sq">"Përkthyesi në gjuhën Shqipe:
-        Hasan Nahi"</string>
-    <string name="translator_tr">"Përkthyesi në gjuhën Turke:
-        Abdulbaki Gölpınarlı"</string>
+    <string name="translators">"Përkthyesi në gjuhën Shqipe:\n Hasan Nahi\nPërkthyesi në gjuhën Angleze:\nMuhammad Habib Shakir\nPërkthyesi në gjuhën Turke:\nAbdulbaki Gölpınarlı\nPërkthyesi në gjuhën Gjermane:\nAdel Theodor Khoury"</string>
     <string name="save">Ruaj</string>
     <string name="cancel">Anulo</string>
     <string name="settings">Preferencat</string>
