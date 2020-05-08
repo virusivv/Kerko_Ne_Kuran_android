@@ -14,4 +14,6 @@ object Constants {
     const val LANGUAGE_PREF = "lang"
     const val DEFAULT_LANGUAGE = "sq"
     const val QURAN_LANGUAGE_PREF = "quran-lang"
+    const val SELECTED_SURAH = "selected-surah"
+    const val SELECTED_AYAH = "selected-ayah"
 }

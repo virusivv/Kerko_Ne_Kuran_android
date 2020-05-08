@@ -5,8 +5,8 @@ import android.content.Context
 import com.kerko.ne.kuran.QuranApplication
 import com.kerko.ne.kuran.R
 import com.kerko.ne.kuran.enums.LanguageEnum
-import kotlinx.android.synthetic.main.dialog_font_size.btnCancel
-import kotlinx.android.synthetic.main.dialog_font_size.btnSave
+import kotlinx.android.synthetic.main.dialog_language.btnCancel
+import kotlinx.android.synthetic.main.dialog_language.btnSave
 import kotlinx.android.synthetic.main.dialog_language.*
 
 /**

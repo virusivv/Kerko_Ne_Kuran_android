@@ -3,11 +3,7 @@ package com.kerko.ne.kuran.dialogs
 import Models.AyahsForCategoriesModel
 import android.app.Dialog
 import android.content.Context
-import android.view.Window
-import com.kerko.ne.kuran.QuranApplication
 import com.kerko.ne.kuran.R
-import kotlinx.android.synthetic.main.dialog_font_size.btnCancel
-import kotlinx.android.synthetic.main.dialog_font_size.btnSave
 import kotlinx.android.synthetic.main.dialog_ayah_category.*
 
 /**

@@ -134,6 +134,30 @@ class QuranApplication : Application() {
             .apply()
     }
 
+    fun setSelectedSurah(surahId: Int) {
+        getSharedPreferences().edit().putInt(Constants.SELECTED_SURAH, surahId)
+            .apply()
+    }
+
+    fun setSelectedAyah(ayahId: Int) {
+        getSharedPreferences().edit().putInt(Constants.SELECTED_AYAH, ayahId)
+            .apply()
+    }
+
+    fun getSelectedSurah(): Int {
+        return getSharedPreferences().getInt(
+                Constants.SELECTED_SURAH,
+                0
+            )
+    }
+
+    fun getSelectedAyah(): Int {
+        return getSharedPreferences().getInt(
+            Constants.SELECTED_AYAH,
+            0
+        )
+    }
+
     fun getQuranLanguage(): QuranLanguagesEnum? {
         return QuranLanguagesEnum.fromCanonicalForm(
             getSharedPreferences().getString(

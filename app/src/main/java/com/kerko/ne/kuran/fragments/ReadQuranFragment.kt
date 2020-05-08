@@ -120,6 +120,10 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
                 position: Int,
                 id: Long
             ) {
+                val oldPosition = QuranApplication.instance.getSelectedSurah()
+                QuranApplication.instance.setSelectedSurah(spinnerSurah.selectedItemPosition)
+                if(oldPosition!=spinnerSurah.selectedItemPosition)
+                    QuranApplication.instance.setSelectedAyah(0)
                 initSpinnerAyahList()
             }
         }
@@ -137,6 +141,7 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
                 position: Int,
                 id: Long
             ) {
+                QuranApplication.instance.setSelectedAyah(spinnerAyah.selectedItemPosition)
                 ayahId = position + 1
                 selectedAyahId = position + 1
                 if (ayahId % 10 == 0)
@@ -145,21 +150,6 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
                     ayahId = ayahId - (ayahId % 10 - 1)
                 getAyahsText()
             }
-        }
-    }
-
-    public fun checkNewLanguage(){
-        try {
-            val newLangList = QuranLanguagesEnum.toStringList()
-            if(newLangList.isNotEmpty()) {
-                if (languagesList.isEmpty() || newLangList[0] != languagesList[0]) {
-                    languagesList = newLangList
-                    initSpinnerQuranLanguages()
-                }
-            }
-        }
-        catch (exception:java.lang.Exception){
-            exception.printStackTrace()
         }
     }
 
@@ -189,8 +179,8 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
             spinnerReadLanguage.adapter = arrayAdapter
 
             val quranLang: QuranLanguagesEnum? = QuranApplication.instance.getQuranLanguage()
-            quranLang?.let {
-                val langPosition: Int = QuranLanguagesEnum.getPositionOnSpinner(quranLang)
+            quranLang?.let {it2 ->
+                val langPosition: Int = QuranLanguagesEnum.getPositionOnSpinner(it2)
                 spinnerReadLanguage.setSelection(langPosition)
             }
 
@@ -205,6 +195,13 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
                 ArrayAdapter(it, android.R.layout.simple_spinner_item, surahsListObject)
             arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinnerSurah.adapter = arrayAdapter
+
+            val selectedSurah: Int? = QuranApplication.instance.getSelectedSurah()
+            selectedSurah?.let {it2 ->
+                spinnerSurah.setSelection(it2)
+            }
+
+
             initSpinnerAyahList()
         }
     }
@@ -221,6 +218,13 @@ class ReadQuranFragment : MvpFragment<ReadQuranView, ReadQuranPresenter>(), Read
             if (AyahListObject!!.size % 10 > 0)
                 totalPages++
 //            getAyahsText()
+
+            val selectedAyah: Int? = QuranApplication.instance.getSelectedAyah()
+            selectedAyah?.let {it2 ->
+                spinnerAyah.setSelection(it2)
+            }
+
+
         }
     }
 
