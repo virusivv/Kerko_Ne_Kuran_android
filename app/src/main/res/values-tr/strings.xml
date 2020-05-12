@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kur\'anda ara</string>
+    <string name="app_name_translation">Kur\'anda ara</string>
 
     <string name="welcome_text">Hoşgeldiniz, şu anda Kur\'andan %d konularımız var.</string>
     <string name="random_topic_text">Size rastgele bir konu önerebilir miyiz? %s hakkında okumak istiyorsanız lütfen buraya tıklayın</string>

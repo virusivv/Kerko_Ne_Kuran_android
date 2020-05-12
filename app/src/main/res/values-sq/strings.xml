@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kërko në Kur\'an</string>
+    <string name="app_name_translation">Kërko në Kur\'an</string>
 
     <string name="welcome_text">Mirë se vini, për momentin ekzistojnë %d Tema nga Kur\'ani.</string>
     <string name="random_topic_text">A mund të ju propozojmë ndonjë temë? Ju lutem shtypni këtu nëse dëshironi të lexoni për: %s</string>

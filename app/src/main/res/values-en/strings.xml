@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Search in Qur\'an</string>
+    <string name="app_name_translation">Search in Qur\'an</string>
 
     <string name="welcome_text">Welcome, currently there are in total %d available Topics from Qur\'an.</string>
     <string name="random_topic_text">May we suggest you a random topic? Please click here if you want to read about: %s</string>
