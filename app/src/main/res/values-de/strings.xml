@@ -43,4 +43,9 @@ Labinot Gashi Übersetzung ins Deutsche."</string>
     <string name="database_origin">Alle übersetzten Inhalte sind Eigentum von:
     <a href="http://qurandatabase.org/">http://qurandatabase.org</a>"
      Wir entschuldigen uns für mögliche Fehler.</string>
+    <string name="feature_failed">Beim Registrieren des Vorschlags ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.</string>
+    <string name="feature_success">Vorschlagsregistrierung erfolgreich abgeschlossen.</string>
+
+    <string name="bug_failed">Beim Registrieren des Fehlers ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.</string>
+    <string name="bug_success">Fehler Registrierung erfolgreich abgeschlossen.</string>
 </resources>

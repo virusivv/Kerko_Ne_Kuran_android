@@ -45,5 +45,10 @@ Labinot Gashi për përkthimin në gjuhën Gjermane."</string>
         <a href="http://qurandatabase.org/">http://qurandatabase.org</a>
         Ju kërkojmë falje nëse ekziston ndonjë gabim.
         </string>
+    <string name="feature_failed">Ka ndodhur një gabim gjatë regjistrimit të sugjerimit, ju lutem provoni përsëri më vonë.</string>
+    <string name="feature_success">Regjistrimi i sugjerimit ka përfunduar me sukses.</string>
+
+    <string name="bug_failed">Ka ndodhur një gabim gjatë regjistrimit të gabimit, ju lutem provoni përsëri më vonë.</string>
+    <string name="bug_success">Regjistrimi i gabimit ka përfunduar me sukses.</string>
 
 </resources>

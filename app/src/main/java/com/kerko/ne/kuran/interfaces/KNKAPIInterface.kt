@@ -7,9 +7,9 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface KNKAPIInterface {
-    @GET("/KerkoNeKuran/KNKAPI.php")
+    @GET("/index.php/user/list")
     fun sendAPI(
-        @Query("form") form: String?,
+        @Query("type") form: String?,
         @Query("message") message: String?
     ): Call<ResponseModel?>?
 }

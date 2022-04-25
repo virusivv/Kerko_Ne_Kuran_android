@@ -7,12 +7,13 @@ import com.kerko.ne.kuran.models.ResponseModel
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.Exception
 
 
 class KNKAsyncTask :
     AsyncTask<String?, Int?, String>() {
 
-    val API_URL = "https://ivasija.com"
+    val API_URL = "https://kerkonekuran.com/"
 
     override fun doInBackground(vararg p0: String?): String {
         val gson = GsonBuilder()
@@ -30,8 +31,12 @@ class KNKAsyncTask :
             gerritAPI.sendAPI(p0[0],p0[1])
         if (call != null) {
             lateinit var test: Call<ResponseModel?>
-            val contributors: ResponseModel? = call.execute().body()
-            return contributors?.Message.toString()
+
+                val execute = call.execute()
+                if(execute.errorBody() != null)
+                    return "-1"
+                val contributors: ResponseModel? = execute.body()
+                return contributors?.Message.toString()
         }
         return ""
     }

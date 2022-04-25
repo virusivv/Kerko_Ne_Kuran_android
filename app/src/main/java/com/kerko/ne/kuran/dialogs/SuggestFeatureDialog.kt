@@ -24,10 +24,12 @@ class SuggestFeatureDialog(context: Context): Dialog(context) {
         btnSave.setOnClickListener {
 
             val stringTest =
-                KNKAsyncTask().execute("Suggest a Feature", etSuggestFeature.text.toString()).get()
+                KNKAsyncTask().execute("feature", etSuggestFeature.text.toString()).get()
 
-            Toast.makeText(context, stringTest, Toast.LENGTH_SHORT).show()
-            dismiss()
+            if(stringTest == "-1")
+                Toast.makeText(context, context.getText(R.string.feature_failed), Toast.LENGTH_SHORT).show()
+            else
+                Toast.makeText(context, context.getText(R.string.feature_success), Toast.LENGTH_SHORT).show()
             dismiss()
         }
 

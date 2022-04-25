@@ -28,9 +28,12 @@ class ReportBugDialog(context: Context) : Dialog(context) {
         btnSave.setOnClickListener {
 
             val stringTest =
-                KNKAsyncTask().execute("Report a Bug", etReportBug.text.toString()).get()
+                KNKAsyncTask().execute("Bug", etReportBug.text.toString()).get()
 
-            Toast.makeText(context, stringTest, Toast.LENGTH_SHORT).show()
+            if(stringTest == "-1")
+                Toast.makeText(context, context.getText(R.string.bug_failed), Toast.LENGTH_SHORT).show()
+            else
+                Toast.makeText(context, context.getText(R.string.bug_success), Toast.LENGTH_SHORT).show()
             dismiss()
         }
 

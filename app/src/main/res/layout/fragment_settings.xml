@@ -16,7 +16,6 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
         android:fontFamily="serif-monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

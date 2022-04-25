@@ -46,4 +46,9 @@
          web sitesinden alınmıştır
         Herhangi bir hata varsa özür dileriz.
     </string>
+    <string name="feature_failed">Öneri kaydedilirken bir hata oluştu, lütfen daha sonra tekrar deneyin.</string>
+    <string name="feature_success">Öneri kaydı başarıyla tamamlandı.</string>
+
+    <string name="bug_failed">Hata kaydedilirken bir hata oluştu, lütfen daha sonra tekrar deneyin.</string>
+    <string name="bug_success">Hata kaydı başarıyla tamamlandı.</string>
 </resources>

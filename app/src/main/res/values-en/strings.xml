@@ -43,4 +43,9 @@ Labinot Gashi for translation into German."</string>
     <string name="database_origin">All translated data are from website
         "<a href="http://qurandatabase.org/">http://qurandatabase.org</a>"
         We apologize if there are any errors.</string>
+    <string name="feature_failed">An error occurred while registering the suggestion, please try again later.</string>
+    <string name="feature_success">Suggestion registration completed successfully.</string>
+
+    <string name="bug_failed">An error occurred while registering the bug, please try again later.</string>
+    <string name="bug_success">Bug registration completed successfully.</string>
 </resources>
